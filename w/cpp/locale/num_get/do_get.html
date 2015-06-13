@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr" class="client-nojs">
+<head>
+<title>std::num_get::get, std::num_get::do_get - cppreference.com</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.21.2" />
+<meta name="robots" content="noindex" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="http://zh.cppreference.com/mwiki/index.php?title=cpp/locale/num_get/get&amp;action=edit" />
+<link rel="edit" title="编辑" href="http://zh.cppreference.com/mwiki/index.php?title=cpp/locale/num_get/get&amp;action=edit" />
+<link rel="shortcut icon" href="../../../../favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../mwiki/opensearch_desc.php" title="cppreference.com (zh)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://zh.cppreference.com/mwiki/api.php?action=rsd" />
+<link rel="alternate" hreflang="zh" href="http://zh.cppreference.com/mwiki/index.php?title=cpp/locale/num_get/get&amp;variant=zh" />
+<link rel="alternate" hreflang="zh-hans" href="http://zh.cppreference.com/mwiki/index.php?title=cpp/locale/num_get/get&amp;variant=zh-hans" />
+<link rel="alternate" hreflang="zh-hant" href="http://zh.cppreference.com/mwiki/index.php?title=cpp/locale/num_get/get&amp;variant=zh-hant" />
+<link rel="alternate" hreflang="zh-cn" href="http://zh.cppreference.com/mwiki/index.php?title=cpp/locale/num_get/get&amp;variant=zh-cn" />
+<link rel="alternate" hreflang="zh-hk" href="http://zh.cppreference.com/mwiki/index.php?title=cpp/locale/num_get/get&amp;variant=zh-hk" />
+<link rel="alternate" hreflang="zh-mo" href="http://zh.cppreference.com/mwiki/index.php?title=cpp/locale/num_get/get&amp;variant=zh-mo" />
+<link rel="alternate" hreflang="zh-my" href="http://zh.cppreference.com/mwiki/index.php?title=cpp/locale/num_get/get&amp;variant=zh-my" />
+<link rel="alternate" hreflang="zh-sg" href="http://zh.cppreference.com/mwiki/index.php?title=cpp/locale/num_get/get&amp;variant=zh-sg" />
+<link rel="alternate" hreflang="zh-tw" href="http://zh.cppreference.com/mwiki/index.php?title=cpp/locale/num_get/get&amp;variant=zh-tw" />
+<link rel="alternate" type="application/atom+xml" title="cppreference.com的Atom" href="http://zh.cppreference.com/mwiki/index.php?title=Special:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="../../../../mwiki/load.php%3Fdebug=false&amp;lang=zh&amp;modules=ext.gadget.ShowEditLinks%257Cext.rtlcite%257Cmediawiki.legacy.commonPrint%252Cshared%257Cskins.cppreference2&amp;only=styles&amp;skin=cppreference2&amp;*.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../../../../mwiki/load.php%3Fdebug=false&amp;lang=zh&amp;modules=site&amp;only=styles&amp;skin=cppreference2&amp;*.css" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-css:7:15cea3ec788a65b5187d4018eed543bf */</style>
+
+<script src="../../../../mwiki/load.php%3Fdebug=false&amp;lang=zh&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/locale/num_get/get","wgTitle":"cpp/locale/num get/get","wgCurRevisionId":38309,"wgArticleId":2870,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Todo with reason"],"wgBreakFrames":false,"wgPageContentLanguage":"zh","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"zh","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgMonthNamesShort":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRelevantPageName":"cpp/locale/num_get/get","wgUserVariant":"zh","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh","language":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ShowEditLinks":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-js:7:aff3edf20b05a275fc6703031b87b0f7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_locale_num_get_get skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="../../../../index.html">
+                        cppreference.com                        </a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+	<h5><label for="searchInput">搜索</label></h5>
+	<form action="http://zh.cppreference.com/mwiki/index.php" id="searchform">
+		<input type='hidden' name="title" value="Special:搜索"/>
+				<div id="simpleSearch">
+						<input name="search" title="在cppreference.com中搜索 [f]" accesskey="f" id="searchInput" />						<button type="submit" name="button" title="搜索含这些文字的页面" id="searchButton"><img src="../../../../mwiki/skins/cppreference2/images/search-ltr.png%3F303" alt="搜索" /></button>					</div>
+			</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="http://zh.cppreference.com/mwiki/index.php?title=Special:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=cpp%2Flocale%2Fnum+get%2Fget&amp;type=signup">创建账户</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="http://zh.cppreference.com/mwiki/index.php?title=Special:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=cpp%2Flocale%2Fnum+get%2Fget" title="我们鼓励你登录，不过这不是强制的 [o]" accesskey="o">登录</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>名字空间</h5>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="do_get.html"  title="查看内容页面 [c]" accesskey="c">页面</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://zh.cppreference.com/mwiki/index.php?title=Talk:cpp/locale/num_get/get&amp;action=edit&amp;redlink=1"  title="有关内容页面的讨论 [t]" accesskey="t">讨论</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu">
+		<h5><span>变换</span><a href="do_get.html#"></a></h5>
+	<div class="menu">
+		<ul>
+							<li id="ca-varlang-0" class="selected"><a href="http://zh.cppreference.com/mwiki/index.php?title=cpp/locale/num_get/get&amp;variant=zh" >不转换</a></li>
+							<li id="ca-varlang-1"><a href="http://zh.cppreference.com/mwiki/index.php?title=cpp/locale/num_get/get&amp;variant=zh-hans" >简体</a></li>
+							<li id="ca-varlang-2"><a href="http://zh.cppreference.com/mwiki/index.php?title=cpp/locale/num_get/get&amp;variant=zh-hant" >繁體</a></li>
+							<li id="ca-varlang-3"><a href="http://zh.cppreference.com/mwiki/index.php?title=cpp/locale/num_get/get&amp;variant=zh-cn" >大陆简体</a></li>
+							<li id="ca-varlang-4"><a href="http://zh.cppreference.com/mwiki/index.php?title=cpp/locale/num_get/get&amp;variant=zh-hk" >香港繁體</a></li>
+							<li id="ca-varlang-5"><a href="http://zh.cppreference.com/mwiki/index.php?title=cpp/locale/num_get/get&amp;variant=zh-mo" >澳門繁體</a></li>
+							<li id="ca-varlang-6"><a href="http://zh.cppreference.com/mwiki/index.php?title=cpp/locale/num_get/get&amp;variant=zh-my" >大马简体</a></li>
+							<li id="ca-varlang-7"><a href="http://zh.cppreference.com/mwiki/index.php?title=cpp/locale/num_get/get&amp;variant=zh-sg" >新加坡简体</a></li>
+							<li id="ca-varlang-8"><a href="http://zh.cppreference.com/mwiki/index.php?title=cpp/locale/num_get/get&amp;variant=zh-tw" >台灣正體</a></li>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>查看</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="do_get.html" >查看</a></span></li>
+					<li id="ca-edit"><span><a href="http://zh.cppreference.com/mwiki/index.php?title=cpp/locale/num_get/get&amp;action=edit"  title="你可以编辑本页面。请在保存前使用预览按钮。 [e]" accesskey="e">编辑</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://zh.cppreference.com/mwiki/index.php?title=cpp/locale/num_get/get&amp;action=history"  title="本页面过去的版本 [h]" accesskey="h">历史</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>操作</span><a href="do_get.html#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading"><span style="font-size:0.7em; line-height:130%">std::num_get::</span>get, <span style="font-size:0.7em; line-height:130%">std::num_get::</span>do_get</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">来自cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../../cpp.html" title="cpp">cpp</a>&lrm; | <a href="../../locale.html" title="cpp/locale">locale</a>&lrm; | <a href="../num_get.html" title="cpp/locale/num get">num get</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="zh" dir="ltr" class="mw-content-ltr"><table class="plainlinks fmbox fmbox-system" style="font-size:0.9em; line-height: 1em">
+<tr>
+<td class="mbox-image">
+  <img alt="" src="../../../../../upload.cppreference.com/mwiki/images/3/31/Imbox_notice.png" width="40" height="40" /></td>
+<td class="mbox-text" style=""> <p>该页由英文版wiki使用<a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a>机器翻译而来。
+</p><p>
+<p>该翻译可能存在错误或用词不当。鼠标停留在文本上可以看到原版本。你可以帮助我们修正错误或改进翻译。参见说明请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>.
+</p>
+</p>
+<p class="t-tr-note-click">
+<a href="http://en.cppreference.com/w/cpp/locale/num_get/get" class="extiw" title="en:cpp/locale/num get/get"> 点击这里参见该页的英文版本</a>
+</p> </td>
+</tr>
+</table>
+<p><!-- META_NOINDEX -->
+</p>
+<div class="t-navbar" style=""><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div>
+<table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+
+<tr>
+<td colspan="5">  <a href="../../language.html" title="cpp/language">语言</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../concept.html" title="cpp/concept">概念</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../utility.html" title="cpp/utility">实用工具库</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../string.html" title="cpp/string">字符串库</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../container.html" title="cpp/container">容器库</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../algorithm.html" title="cpp/algorithm">算法库</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../iterator.html" title="cpp/iterator">迭代器库</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../numeric.html" title="cpp/numeric">Numerics库</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../io.html" title="cpp/io">输入/输出库</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../locale.html" title="cpp/locale">本地化库</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../regex.html" title="cpp/regex">正则表达式库</a> <span class="t-mark">（C++11）</span>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../atomic.html" title="cpp/atomic">原子操作库</a> <span class="t-mark">（C++11）</span>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../thread.html" title="cpp/thread">线程的支持库</a> <span class="t-mark">（C++11）</span>
+</td></tr>
+</table>
+</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://zh.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../locale.html" title="cpp/locale">本地化库</a><div class="t-navbar-menu"><div><div>
+<table class="t-nv-begin" cellpadding="0" style="">
+
+<tr class="t-nv-h1">
+<td colspan="5"> <div class="t-tr-text"> 语言环境方面<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"> Locales and facets</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../locale.html" title="cpp/locale/locale">locale</a></td></tr></table>
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-nv-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../use_facet.html" title="cpp/locale/use facet">use_facet</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-nv-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../has_facet.html" title="cpp/locale/has facet">has_facet</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+<tr class="t-nv-h2">
+<td colspan="5"> <div class="t-tr-text"> 字符分类<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"> Character classification</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-nv-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../isspace.html" title="cpp/locale/isspace">isspace</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../isblank.html" title="cpp/locale/isblank">isblank</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../iscntrl.html" title="cpp/locale/iscntrl">iscntrl</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../isupper.html" title="cpp/locale/isupper">isupper</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../islower.html" title="cpp/locale/islower">islower</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../isalpha.html" title="cpp/locale/isalpha">isalpha</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-nv-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../isdigit.html" title="cpp/locale/isdigit">isdigit</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../ispunct.html" title="cpp/locale/ispunct">ispunct</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../isxdigit.html" title="cpp/locale/isxdigit">isxdigit</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../isalnum.html" title="cpp/locale/isalnum">isalnum</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../isprint.html" title="cpp/locale/isprint">isprint</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../isgraph.html" title="cpp/locale/isgraph">isgraph</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-nv-h2">
+<td colspan="5"> <div class="t-tr-text"> 转换<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"> Conversions</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-nv-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../toupper.html" title="cpp/locale/toupper">toupper</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../tolower.html" title="cpp/locale/tolower">tolower</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-nv-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../wstring_convert.html" title="cpp/locale/wstring convert">wstring_convert</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../wbuffer_convert.html" title="cpp/locale/wbuffer convert">wbuffer_convert</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-nv-h2">
+<td colspan="5"> <div class="t-tr-text"> 小面类的基类<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"> Facet category base classes</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-nv-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../ctype_base.html" title="cpp/locale/ctype base">ctype_base</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../codecvt_base.html" title="cpp/locale/codecvt base">codecvt_base</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../messages_base.html" title="cpp/locale/messages base">messages_base</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-nv-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../time_base.html" title="cpp/locale/time base">time_base</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../money_base.html" title="cpp/locale/money base">money_base</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-nv-h2">
+<td colspan="5"> <div class="t-tr-text"> 小面类<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"> Facet categories</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-nv-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../ctype.html" title="cpp/locale/ctype">ctype</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../ctype_char.html" title="cpp/locale/ctype char">ctype&lt;char&gt;</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../codecvt.html" title="cpp/locale/codecvt">codecvt</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../collate.html" title="cpp/locale/collate">collate</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../messages.html" title="cpp/locale/messages">messages</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../time_get.html" title="cpp/locale/time get">time_get</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../time_put.html" title="cpp/locale/time put">time_put</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-nv-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../num_get.html" title="cpp/locale/num get">num_get</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../num_put.html" title="cpp/locale/num put">num_put</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../numpunct.html" title="cpp/locale/numpunct">numpunct</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../money_get.html" title="cpp/locale/money get">money_get</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../money_put.html" title="cpp/locale/money put">money_put</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../moneypunct.html" title="cpp/locale/moneypunct">moneypunct</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-nv-h2">
+<td colspan="5"> <div class="t-tr-text"> 特定于语言环境的方面<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"> Locale-specific facets</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-nv-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../ctype_byname.html" title="cpp/locale/ctype byname">ctype_byname</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../ctype_byname_char.html" title="cpp/locale/ctype byname char">ctype_byname&lt;char&gt;</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../codecvt_byname.html" title="cpp/locale/codecvt byname">codecvt_byname</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../messages_byname.html" title="cpp/locale/messages byname">messages_byname</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../collate_byname.html" title="cpp/locale/collate byname">collate_byname</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-nv-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../time_get_byname.html" title="cpp/locale/time get byname">time_get_byname</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../time_put_byname.html" title="cpp/locale/time put byname">time_put_byname</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../numpunct_byname.html" title="cpp/locale/numpunct byname">numpunct_byname</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../moneypunct_byname.html" title="cpp/locale/moneypunct byname">moneypunct_byname</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-nv-h2">
+<td colspan="5"> <div class="t-tr-text"> 代码转换方面<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"> Code conversion facets</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-nv-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../codecvt_utf8.html" title="cpp/locale/codecvt utf8">codecvt_utf8</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../codecvt_utf16.html" title="cpp/locale/codecvt utf16">codecvt_utf16</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-nv-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../codecvt_utf8_utf16.html" title="cpp/locale/codecvt utf8 utf16">codecvt_utf8_utf16</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../codecvt_mode.html" title="cpp/locale/codecvt mode">codecvt_mode</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-nv-h2">
+<td colspan="5"> <div class="t-tr-text"> C语言环境<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"> C locale</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-nv-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../setlocale.html" title="cpp/locale/setlocale">setlocale</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../localeconv.html" title="cpp/locale/localeconv">localeconv</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../lconv.html" title="cpp/locale/lconv">lconv</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-nv-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../LC_categories.html" title="cpp/locale/LC categories">LC_ALL<br />LC_COLLATE<br />LC_CTYPE<br />LC_MONETARY<br />LC_NUMERIC<br />LC_TIME</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+</table>
+</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://zh.cppreference.com/mwiki/index.php?title=Template:cpp/locale/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../num_get.html" title="cpp/locale/num get"><code>std::num_get</code></a><div class="t-navbar-menu"><div><div>
+<table class="t-nv-begin" cellpadding="0" style="">
+
+<tr class="t-nv-h2">
+<td colspan="5"> <div class="t-tr-text"> 成员函数<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"> Member functions</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="num_get.html" title="cpp/locale/num get/num get">num_get::num_get</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="~num_get.html" title="cpp/locale/num get/~num get">num_get::~num_get</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="do_get.html" title="cpp/locale/num get/do get" class="mw-redirect">num_get::get<br />num_get::do_get</a></td></tr></table>
+</td></tr>
+</table>
+</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://zh.cppreference.com/mwiki/index.php?title=Template:cpp/locale/num_get/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div></div>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dsc-header">
+<td> <div>在头文件 <tt>&lt;locale&gt;</tt> 中定义
+ </div></td>
+<td></td>
+<td></td>
+</tr><tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+<tr class="t-dcl">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">public</span><span class="sy4">:</span><br />
+<p>iter_type get<span class="br0">&#40;</span> iter_type in, iter_type end, <a href="../../io/ios_base.html"><span class="kw1340">std::<span class="me2">ios_base</span></span></a><span class="sy3">&amp;</span> str, <br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<a href="../../io/ios_base/iostate.html"><span class="kw1368">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">iostate</span></span></a><span class="sy3">&amp;</span> err, <span class="kw4">bool</span><span class="sy3">&amp;</span> v <span class="br0">&#41;</span><span class="sy4">;</span><br />
+iter_type get<span class="br0">&#40;</span> iter_type in, iter_type end, <a href="../../io/ios_base.html"><span class="kw1340">std::<span class="me2">ios_base</span></span></a><span class="sy3">&amp;</span> str, <br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<a href="../../io/ios_base/iostate.html"><span class="kw1368">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">iostate</span></span></a><span class="sy3">&amp;</span> err, <span class="kw4">long</span><span class="sy3">&amp;</span> v <span class="br0">&#41;</span><span class="sy4">;</span><br />
+iter_type get<span class="br0">&#40;</span> iter_type in, iter_type end, <a href="../../io/ios_base.html"><span class="kw1340">std::<span class="me2">ios_base</span></span></a><span class="sy3">&amp;</span> str, <br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<a href="../../io/ios_base/iostate.html"><span class="kw1368">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">iostate</span></span></a><span class="sy3">&amp;</span> err, <span class="kw4">long</span> <span class="kw4">long</span><span class="sy3">&amp;</span> v <span class="br0">&#41;</span><span class="sy4">;</span><br />
+iter_type get<span class="br0">&#40;</span> iter_type in, iter_type end, <a href="../../io/ios_base.html"><span class="kw1340">std::<span class="me2">ios_base</span></span></a><span class="sy3">&amp;</span> str, <br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<a href="../../io/ios_base/iostate.html"><span class="kw1368">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">iostate</span></span></a><span class="sy3">&amp;</span> err, <span class="kw4">unsigned</span> <span class="kw4">short</span><span class="sy3">&amp;</span> v <span class="br0">&#41;</span><span class="sy4">;</span><br />
+iter_type get<span class="br0">&#40;</span> iter_type in, iter_type end, <a href="../../io/ios_base.html"><span class="kw1340">std::<span class="me2">ios_base</span></span></a><span class="sy3">&amp;</span> str, <br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<a href="../../io/ios_base/iostate.html"><span class="kw1368">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">iostate</span></span></a><span class="sy3">&amp;</span> err, <span class="kw4">unsigned</span> <span class="kw4">int</span><span class="sy3">&amp;</span> v <span class="br0">&#41;</span><span class="sy4">;</span><br />
+iter_type get<span class="br0">&#40;</span> iter_type in, iter_type end, <a href="../../io/ios_base.html"><span class="kw1340">std::<span class="me2">ios_base</span></span></a><span class="sy3">&amp;</span> str, <br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<a href="../../io/ios_base/iostate.html"><span class="kw1368">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">iostate</span></span></a><span class="sy3">&amp;</span> err, <span class="kw4">unsigned</span> <span class="kw4">long</span><span class="sy3">&amp;</span> v <span class="br0">&#41;</span><span class="sy4">;</span><br />
+iter_type get<span class="br0">&#40;</span> iter_type in, iter_type end, <a href="../../io/ios_base.html"><span class="kw1340">std::<span class="me2">ios_base</span></span></a><span class="sy3">&amp;</span> str, <br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<a href="../../io/ios_base/iostate.html"><span class="kw1368">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">iostate</span></span></a><span class="sy3">&amp;</span> err, <span class="kw4">unsigned</span> <span class="kw4">long</span> <span class="kw4">long</span><span class="sy3">&amp;</span> v <span class="br0">&#41;</span><span class="sy4">;</span><br />
+iter_type get<span class="br0">&#40;</span> iter_type in, iter_type end, <a href="../../io/ios_base.html"><span class="kw1340">std::<span class="me2">ios_base</span></span></a><span class="sy3">&amp;</span> str, <br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<a href="../../io/ios_base/iostate.html"><span class="kw1368">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">iostate</span></span></a><span class="sy3">&amp;</span> err, <span class="kw4">float</span><span class="sy3">&amp;</span> v <span class="br0">&#41;</span><span class="sy4">;</span><br />
+iter_type get<span class="br0">&#40;</span> iter_type in, iter_type end, <a href="../../io/ios_base.html"><span class="kw1340">std::<span class="me2">ios_base</span></span></a><span class="sy3">&amp;</span> str, <br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<a href="../../io/ios_base/iostate.html"><span class="kw1368">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">iostate</span></span></a><span class="sy3">&amp;</span> err, <span class="kw4">double</span><span class="sy3">&amp;</span> v <span class="br0">&#41;</span><span class="sy4">;</span><br />
+iter_type get<span class="br0">&#40;</span> iter_type in, iter_type end, <a href="../../io/ios_base.html"><span class="kw1340">std::<span class="me2">ios_base</span></span></a><span class="sy3">&amp;</span> str, <br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<a href="../../io/ios_base/iostate.html"><span class="kw1368">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">iostate</span></span></a><span class="sy3">&amp;</span> err, <span class="kw4">long</span> <span class="kw4">double</span><span class="sy3">&amp;</span> v <span class="br0">&#41;</span><span class="sy4">;</span><br />
+iter_type get<span class="br0">&#40;</span> iter_type in, iter_type end, <a href="../../io/ios_base.html"><span class="kw1340">std::<span class="me2">ios_base</span></span></a><span class="sy3">&amp;</span> str, <br />
+</p>
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<a href="../../io/ios_base/iostate.html"><span class="kw1368">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">iostate</span></span></a><span class="sy3">&amp;</span> err, <span class="kw4">void</span><span class="sy2">*</span><span class="sy3">&amp;</span> v <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+<td> (1) </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+<tr class="t-dcl">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">protected</span><span class="sy4">:</span><br />
+<p>iter_type do_get<span class="br0">&#40;</span> iter_type in, iter_type end, <a href="../../io/ios_base.html"><span class="kw1340">std::<span class="me2">ios_base</span></span></a><span class="sy3">&amp;</span> str, <br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../../io/ios_base/iostate.html"><span class="kw1368">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">iostate</span></span></a><span class="sy3">&amp;</span> err, <span class="kw4">bool</span><span class="sy3">&amp;</span> v <span class="br0">&#41;</span><span class="sy4">;</span><br />
+iter_type do_get<span class="br0">&#40;</span> iter_type in, iter_type end, <a href="../../io/ios_base.html"><span class="kw1340">std::<span class="me2">ios_base</span></span></a><span class="sy3">&amp;</span> str, <br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../../io/ios_base/iostate.html"><span class="kw1368">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">iostate</span></span></a><span class="sy3">&amp;</span> err, <span class="kw4">long</span><span class="sy3">&amp;</span> v <span class="br0">&#41;</span><span class="sy4">;</span><br />
+iter_type do_get<span class="br0">&#40;</span> iter_type in, iter_type end, <a href="../../io/ios_base.html"><span class="kw1340">std::<span class="me2">ios_base</span></span></a><span class="sy3">&amp;</span> str, <br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../../io/ios_base/iostate.html"><span class="kw1368">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">iostate</span></span></a><span class="sy3">&amp;</span> err, <span class="kw4">long</span> <span class="kw4">long</span><span class="sy3">&amp;</span> v <span class="br0">&#41;</span><span class="sy4">;</span><br />
+iter_type do_get<span class="br0">&#40;</span> iter_type in, iter_type end, <a href="../../io/ios_base.html"><span class="kw1340">std::<span class="me2">ios_base</span></span></a><span class="sy3">&amp;</span> str, <br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../../io/ios_base/iostate.html"><span class="kw1368">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">iostate</span></span></a><span class="sy3">&amp;</span> err, <span class="kw4">unsigned</span> <span class="kw4">short</span><span class="sy3">&amp;</span> v <span class="br0">&#41;</span><span class="sy4">;</span><br />
+iter_type do_get<span class="br0">&#40;</span> iter_type in, iter_type end, <a href="../../io/ios_base.html"><span class="kw1340">std::<span class="me2">ios_base</span></span></a><span class="sy3">&amp;</span> str, <br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../../io/ios_base/iostate.html"><span class="kw1368">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">iostate</span></span></a><span class="sy3">&amp;</span> err, <span class="kw4">unsigned</span> <span class="kw4">int</span><span class="sy3">&amp;</span> v <span class="br0">&#41;</span><span class="sy4">;</span><br />
+iter_type do_get<span class="br0">&#40;</span> iter_type in, iter_type end, <a href="../../io/ios_base.html"><span class="kw1340">std::<span class="me2">ios_base</span></span></a><span class="sy3">&amp;</span> str, <br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../../io/ios_base/iostate.html"><span class="kw1368">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">iostate</span></span></a><span class="sy3">&amp;</span> err, <span class="kw4">unsigned</span> <span class="kw4">long</span><span class="sy3">&amp;</span> v <span class="br0">&#41;</span><span class="sy4">;</span><br />
+iter_type do_get<span class="br0">&#40;</span> iter_type in, iter_type end, <a href="../../io/ios_base.html"><span class="kw1340">std::<span class="me2">ios_base</span></span></a><span class="sy3">&amp;</span> str, <br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../../io/ios_base/iostate.html"><span class="kw1368">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">iostate</span></span></a><span class="sy3">&amp;</span> err, <span class="kw4">unsigned</span> <span class="kw4">long</span> <span class="kw4">long</span><span class="sy3">&amp;</span> v <span class="br0">&#41;</span><span class="sy4">;</span><br />
+iter_type do_get<span class="br0">&#40;</span> iter_type in, iter_type end, <a href="../../io/ios_base.html"><span class="kw1340">std::<span class="me2">ios_base</span></span></a><span class="sy3">&amp;</span> str, <br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../../io/ios_base/iostate.html"><span class="kw1368">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">iostate</span></span></a><span class="sy3">&amp;</span> err, <span class="kw4">float</span><span class="sy3">&amp;</span> v <span class="br0">&#41;</span><span class="sy4">;</span><br />
+iter_type do_get<span class="br0">&#40;</span> iter_type in, iter_type end, <a href="../../io/ios_base.html"><span class="kw1340">std::<span class="me2">ios_base</span></span></a><span class="sy3">&amp;</span> str, <br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../../io/ios_base/iostate.html"><span class="kw1368">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">iostate</span></span></a><span class="sy3">&amp;</span> err, <span class="kw4">double</span><span class="sy3">&amp;</span> v <span class="br0">&#41;</span><span class="sy4">;</span><br />
+iter_type do_get<span class="br0">&#40;</span> iter_type in, iter_type end, <a href="../../io/ios_base.html"><span class="kw1340">std::<span class="me2">ios_base</span></span></a><span class="sy3">&amp;</span> str, <br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../../io/ios_base/iostate.html"><span class="kw1368">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">iostate</span></span></a><span class="sy3">&amp;</span> err, <span class="kw4">long</span> <span class="kw4">double</span><span class="sy3">&amp;</span> v <span class="br0">&#41;</span><span class="sy4">;</span><br />
+iter_type do_get<span class="br0">&#40;</span> iter_type in, iter_type end, <a href="../../io/ios_base.html"><span class="kw1340">std::<span class="me2">ios_base</span></span></a><span class="sy3">&amp;</span> str, <br />
+</p>
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../../io/ios_base/iostate.html"><span class="kw1368">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">iostate</span></span></a><span class="sy3">&amp;</span> err, <span class="kw4">void</span><span class="sy2">*</span><span class="sy3">&amp;</span> v <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+<td> (2) </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+1) <div class="t-tr-text">公共成员函数，调用最派生类的成员函数<code>do_get</code>.<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">public member function, calls the member function <code>do_get</code> of the most derived class.</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+2) <div class="t-tr-text">读取字符，并生成从输入迭代器<code>in</code><code>v</code>的类型的值，考虑到IO流格式化标志从<code>str.flags()</code>，字符分类规则<span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">use_facet</span><span class="sy1">&lt;</span>std<span class="sy4">::</span><span class="me2">ctype</span><span class="sy1">&lt;</span>charT<span class="sy1">&gt;&gt;</span><span class="br0">&#40;</span>str.<span class="me1">getloc</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span></span></span>，并从<span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">use_facet</span><span class="sy1">&lt;</span>std<span class="sy4">::</span><span class="me2">numpunct</span><span class="sy1">&lt;</span>charT<span class="sy1">&gt;&gt;</span><span class="br0">&#40;</span>str.<span class="me1">getloc</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span></span></span>​​数字标点字符。这个函数被调用所有格式的输入流的运营商，如<span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../io/basic_istream.html"><span class="kw1422">std::<span class="me2">cin</span></span></a> <span class="sy1">&gt;&gt;</span> n<span class="sy4">;</span></span></span>.<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">reads characters from the input iterator <code>in</code> and generates the value of the type of <code>v</code>, taking into account IO stream formatting flags from <code>str.flags()</code>, character classification rules from <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">use_facet</span><span class="sy1">&lt;</span>std<span class="sy4">::</span><span class="me2">ctype</span><span class="sy1">&lt;</span>charT<span class="sy1">&gt;&gt;</span><span class="br0">&#40;</span>str.<span class="me1">getloc</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span></span></span>, and numeric punctuation characters from <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">use_facet</span><span class="sy1">&lt;</span>std<span class="sy4">::</span><span class="me2">numpunct</span><span class="sy1">&lt;</span>charT<span class="sy1">&gt;&gt;</span><span class="br0">&#40;</span>str.<span class="me1">getloc</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span></span></span>. This function is called by all formatted input stream operators such as <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../io/basic_istream.html"><span class="kw1422">std::<span class="me2">cin</span></span></a> <span class="sy1">&gt;&gt;</span> n<span class="sy4">;</span></span></span>.</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+<div class="t-tr-text">转换发生在三个阶段<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">Conversion occurs in three stages</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="do_get.html#.E7.AC.AC1.E9.98.B6.E6.AE.B5.EF.BC.9A.E8.BD.AC.E6.8D.A2.E7.AC.A6.E7.9A.84.E9.80.89.E6.8B.A9"><span class="tocnumber">1</span> <span class="toctext">第1阶段：转换符的选择</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="do_get.html#.E7.AC.AC2.E9.98.B6.E6.AE.B5.EF.BC.9A.E7.89.B9.E5.BE.81.E6.8F.90.E5.8F.96"><span class="tocnumber">2</span> <span class="toctext">第2阶段：特征提取</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="do_get.html#.E7.AC.AC3.E9.98.B6.E6.AE.B5.EF.BC.9A.E8.BD.AC.E6.8D.A2.E5.92.8C.E5.AD.98.E5.82.A8"><span class="tocnumber">3</span> <span class="toctext">第3阶段：转换和存储</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="do_get.html#.E8.BF.94.E5.9B.9E.E5.80.BC"><span class="tocnumber">4</span> <span class="toctext">返回值</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="do_get.html#.E6.B3.A8.E9.87.8A"><span class="tocnumber">5</span> <span class="toctext">注释</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="do_get.html#.E7.A4.BA.E4.BE.8B"><span class="tocnumber">6</span> <span class="toctext">示例</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="do_get.html#.E5.8F.A6.E8.AF.B7.E5.8F.82.E9.98.85"><span class="tocnumber">7</span> <span class="toctext">另请参阅</span></a></li>
+</ul>
+</td></tr></table>
+<h4><span class="editsection">[<a href="http://zh.cppreference.com/mwiki/index.php?title=cpp/locale/num_get/get&amp;action=edit&amp;section=1" title="编辑章节：第1阶段：转换符的选择">编辑</a>]</span> <span class="mw-headline" id=".E7.AC.AC1.E9.98.B6.E6.AE.B5.EF.BC.9A.E8.BD.AC.E6.8D.A2.E7.AC.A6.E7.9A.84.E9.80.89.E6.8B.A9">第1阶段：转换符的选择</span></h4>
+<ul><li> <div class="t-tr-text">I / O格式的标志，如果获得<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">I/O format flags are obtained, as if by</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</li></ul>
+<dl><dd> <span class="t-c"><span class="mw-geshi cpp source-cpp">fmtflags basefield <span class="sy1">=</span> <span class="br0">&#40;</span>str.<span class="me1">flags</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy3">&amp;</span> <a href="../../io/ios_base/fmtflags.html"><span class="kw1353">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">basefield</span></span></a><span class="br0">&#41;</span><span class="sy4">;</span></span></span>
+</dd><dd> <span class="t-c"><span class="mw-geshi cpp source-cpp">fmtflags boolalpha <span class="sy1">=</span> <span class="br0">&#40;</span>str.<span class="me1">flags</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy3">&amp;</span> <a href="../../io/ios_base/fmtflags.html"><span class="kw1361">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">boolalpha</span></span></a><span class="br0">&#41;</span><span class="sy4">;</span></span></span>
+</dd></dl>
+<ul><li> <div class="t-tr-text">如果类型的<code>v</code>是一个整数类型，第一个适用的选择：选择以下五个<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">If the type of <code>v</code> is an integer type, the the first applicable choice of the following five is selected:</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</li></ul>
+<dl><dd> <div class="t-tr-text">如果<span class="t-c"><span class="mw-geshi cpp source-cpp">basefield <span class="sy1">==</span> oct</span></span>，将使用转换符<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">%</span>o</span></span><div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">If <span class="t-c"><span class="mw-geshi cpp source-cpp">basefield <span class="sy1">==</span> oct</span></span>, will use conversion specifier <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">%</span>o</span></span></div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</dd><dd> <div class="t-tr-text">如果<span class="t-c"><span class="mw-geshi cpp source-cpp">basefield <span class="sy1">==</span> hex</span></span>，将使用转换符<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">%</span>X</span></span><div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">If <span class="t-c"><span class="mw-geshi cpp source-cpp">basefield <span class="sy1">==</span> hex</span></span>, will use conversion specifier <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">%</span>X</span></span></div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</dd><dd> <div class="t-tr-text">如果<span class="t-c"><span class="mw-geshi cpp source-cpp">basefield <span class="sy1">==</span> <span class="nu0">0</span></span></span>，将使用转换符<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">%</span>i</span></span><div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">If <span class="t-c"><span class="mw-geshi cpp source-cpp">basefield <span class="sy1">==</span> <span class="nu0">0</span></span></span>, will use conversion specifier <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">%</span>i</span></span></div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</dd><dd> <div class="t-tr-text">如果<code>v</code>签署，将使用转换符<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">%</span>d</span></span><div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">If the type of <code>v</code> is signed, will use conversion specifier <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">%</span>d</span></span></div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</dd><dd> <div class="t-tr-text">如果是无符号的类型<code>v</code>，将使用转换符<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">%</span>u</span></span><div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">If the type of <code>v</code> is unsigned, will use conversion specifier <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">%</span>u</span></span></div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</dd></dl>
+<ul><li> <div class="t-tr-text">对于整数类型，长度修饰符添加到转换规范，如果必要的：<span class="t-c"><span class="mw-geshi cpp source-cpp">h</span></span>为<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">short</span></span></span><span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">short</span></span></span>，<span class="t-c"><span class="mw-geshi cpp source-cpp">l</span></span><span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span></span></span>和<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">long</span></span></span>，<span class="t-c"><span class="mw-geshi cpp source-cpp">ll</span></span><span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span> <span class="kw4">long</span></span></span>和<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">long</span> <span class="kw4">long</span></span></span><div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">For integer types, length modifier is added to the conversion specification if necessary: <span class="t-c"><span class="mw-geshi cpp source-cpp">h</span></span> for <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">short</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">short</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp">l</span></span> for <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">long</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp">ll</span></span> for <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span> <span class="kw4">long</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">long</span> <span class="kw4">long</span></span></span></div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</li><li> <div class="t-tr-text">如果<code>v</code><span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">float</span></span></span>，将使用转换符<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">%</span>g</span></span><div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">If the type of <code>v</code> is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">float</span></span></span>, will use conversion specifier <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">%</span>g</span></span></div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</li><li> <div class="t-tr-text">如果<code>v</code><span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">double</span></span></span>，将使用转换符<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">%</span>lg</span></span><div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">If the type of <code>v</code> is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">double</span></span></span>, will use conversion specifier <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">%</span>lg</span></span></div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</li><li> <div class="t-tr-text">如果<code>v</code><span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span> <span class="kw4">double</span></span></span>，将使用转换符<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">%</span>Lg</span></span><div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">If the type of <code>v</code> is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span> <span class="kw4">double</span></span></span>, will use conversion specifier <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">%</span>Lg</span></span></div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</li><li> <div class="t-tr-text">如果<code>v</code><span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span><span class="sy2">*</span></span></span>，将使用转换符<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">%</span>p</span></span><div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">If the type of <code>v</code> is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span><span class="sy2">*</span></span></span>, will use conversion specifier <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">%</span>p</span></span></div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</li><li> <div class="t-tr-text">如果类型<code>v</code><span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span>和<span class="t-c"><span class="mw-geshi cpp source-cpp">boolalpha<span class="sy1">==</span><span class="nu0">0</span></span></span>，犹如所得的类型<code>v</code>是<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span></span></span>，除的值将被存储在第3阶段中的<code>v</code>.<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">If the type of <code>v</code> is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp">boolalpha<span class="sy1">==</span><span class="nu0">0</span></span></span>, proceeds as if the type of <code>v</code> is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span></span></span>, except for the value to be stored in <code>v</code> in stage 3.</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</li><li> <div class="t-tr-text">如果类型<code>v</code><span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span>和<span class="t-c"><span class="mw-geshi cpp source-cpp">boolalpha<span class="sy3">!</span><span class="sy1">=</span><span class="nu0">0</span></span></span>，下列取代：阶段2和3<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">If the type of <code>v</code> is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp">boolalpha<span class="sy3">!</span><span class="sy1">=</span><span class="nu0">0</span></span></span>, the following replaces stages 2 and 3:</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</li><li><div class="t-tr-text">连续的字符输入迭代器<code>in</code>从<span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">use_facet</span><span class="sy1">&lt;</span>std<span class="sy4">::</span><span class="me2">numpunct</span><span class="sy1">&lt;</span>charT<span class="sy1">&gt;&gt;</span><span class="br0">&#40;</span>str.<span class="me1">getloc</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>.<span class="me1">falsename</span><span class="br0">&#40;</span><span class="br0">&#41;</span></span></span>和<span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">use_facet</span><span class="sy1">&lt;</span>std<span class="sy4">::</span><span class="me2">numpunct</span><span class="sy1">&lt;</span>charT<span class="sy1">&gt;</span> <span class="sy1">&gt;</span><span class="br0">&#40;</span>str.<span class="me1">getloc</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>.<span class="me1">truename</span><span class="br0">&#40;</span><span class="br0">&#41;</span></span></span>只在必要时获得识别的唯一匹配的字符序列相匹配。输入迭代器<code>in</code>相比<code>end</code>只在必要时，得到一个字符.<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">* Successive characters obtained from the input iterator <code>in</code> are matched against the character sequences obtained from <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">use_facet</span><span class="sy1">&lt;</span>std<span class="sy4">::</span><span class="me2">numpunct</span><span class="sy1">&lt;</span>charT<span class="sy1">&gt;&gt;</span><span class="br0">&#40;</span>str.<span class="me1">getloc</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>.<span class="me1">falsename</span><span class="br0">&#40;</span><span class="br0">&#41;</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">use_facet</span><span class="sy1">&lt;</span>std<span class="sy4">::</span><span class="me2">numpunct</span><span class="sy1">&lt;</span>charT<span class="sy1">&gt;</span> <span class="sy1">&gt;</span><span class="br0">&#40;</span>str.<span class="me1">getloc</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>.<span class="me1">truename</span><span class="br0">&#40;</span><span class="br0">&#41;</span></span></span> only as necessary as to identify the unique match. The input iterator <code>in</code> is compared to <code>end</code> only when necessary to obtain a character.</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</li><li><div class="t-tr-text">*如果靶序列是唯一匹配，<code>v</code>被设置为相应的<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span>值。否则<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span>被存储在<code>v</code><span class="t-lc">std::ios_base::failbit</span>被分配给<code>err</code>。如果唯一的匹配找不到之前的输入端（<span class="t-c"><span class="mw-geshi cpp source-cpp">in<span class="sy1">==</span>end</span></span>），<span class="t-c"><span class="mw-geshi cpp source-cpp">err<span class="sy3">|</span><span class="sy1">=</span><a href="../../io/ios_base/iostate.html"><span class="kw1372">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">eofbit</span></span></a></span></span>执行.<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">* If the target sequence is uniquely matched, <code>v</code> is set to the corresponding <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span> value. Otherwise <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span> is stored in <code>v</code> and <span class="t-lc">std::ios_base::failbit</span> is assigned to <code>err</code>. If unique match could not be found before the input ended (<span class="t-c"><span class="mw-geshi cpp source-cpp">in<span class="sy1">==</span>end</span></span>), <span class="t-c"><span class="mw-geshi cpp source-cpp">err<span class="sy3">|</span><span class="sy1">=</span><a href="../../io/ios_base/iostate.html"><span class="kw1372">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">eofbit</span></span></a></span></span> is executed.</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</li></ul>
+<h4><span class="editsection">[<a href="http://zh.cppreference.com/mwiki/index.php?title=cpp/locale/num_get/get&amp;action=edit&amp;section=2" title="编辑章节：第2阶段：特征提取">编辑</a>]</span> <span class="mw-headline" id=".E7.AC.AC2.E9.98.B6.E6.AE.B5.EF.BC.9A.E7.89.B9.E5.BE.81.E6.8F.90.E5.8F.96">第2阶段：特征提取</span></h4>
+<ul><li> <div class="t-tr-text">如果<span class="t-c"><span class="mw-geshi cpp source-cpp">in<span class="sy1">==</span>end</span></span>，第2阶段被立即终止，没有多余的字符提取出来<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">If <span class="t-c"><span class="mw-geshi cpp source-cpp">in<span class="sy1">==</span>end</span></span>, Stage 2 is terminated immediately, no further characters are extracted</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</li><li> <div class="t-tr-text">如果由<span class="t-c"><span class="mw-geshi cpp source-cpp">in</span></span>的下一个字符提取<span class="t-c"><span class="mw-geshi cpp source-cpp">char_type ct <span class="sy1">=</span> <span class="sy2">*</span>in<span class="sy4">;</span></span></span><div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">The next character is extracted from <span class="t-c"><span class="mw-geshi cpp source-cpp">in</span></span> as if by <span class="t-c"><span class="mw-geshi cpp source-cpp">char_type ct <span class="sy1">=</span> <span class="sy2">*</span>in<span class="sy4">;</span></span></span></div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</li><li><div class="t-tr-text">*如果字符相匹配的<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="st0">&quot;0123456789abcdefxABCDEFX+-&quot;</span></span></span>，扩大到语言环境的char_type，如果<span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">use_facet</span><span class="sy1">&lt;</span>std<span class="sy4">::</span><span class="me2">ctype</span><span class="sy1">&lt;</span>charT<span class="sy1">&gt;&gt;</span><span class="br0">&#40;</span>str.<span class="me1">getloc</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>.<span class="me1">widen</span><span class="br0">&#40;</span><span class="br0">&#41;</span></span></span>，它被转换为相应的<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">char</span></span></span>.<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">* If the character matches one of <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="st0">&quot;0123456789abcdefxABCDEFX+-&quot;</span></span></span>, widened to the locale's char_type as if by <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">use_facet</span><span class="sy1">&lt;</span>std<span class="sy4">::</span><span class="me2">ctype</span><span class="sy1">&lt;</span>charT<span class="sy1">&gt;&gt;</span><span class="br0">&#40;</span>str.<span class="me1">getloc</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>.<span class="me1">widen</span><span class="br0">&#40;</span><span class="br0">&#41;</span></span></span>, it is converted to the corresponding <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">char</span></span></span>.</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</li><li><div class="t-tr-text">*如果字符匹配的小数点分隔符（<span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">use_facet</span><span class="sy1">&lt;</span>std<span class="sy4">::</span><span class="me2">numpunct</span><span class="sy1">&lt;</span>charT<span class="sy1">&gt;&gt;</span><span class="br0">&#40;</span>str.<span class="me1">getloc</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>.<span class="me1">decimal_point</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span></span></span>），它被替换<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="st0">'.'</span></span></span>.<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">* If the character matches the decimal point separator (<span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">use_facet</span><span class="sy1">&lt;</span>std<span class="sy4">::</span><span class="me2">numpunct</span><span class="sy1">&lt;</span>charT<span class="sy1">&gt;&gt;</span><span class="br0">&#40;</span>str.<span class="me1">getloc</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>.<span class="me1">decimal_point</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span></span></span>), it is replaced by <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="st0">'.'</span></span></span>.</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</li><li><div class="t-tr-text">*，如果字符相匹配的千位分隔符（<span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">use_facet</span><span class="sy1">&lt;</span>std<span class="sy4">::</span><span class="me2">numpunct</span><span class="sy1">&lt;</span>charT<span class="sy1">&gt;&gt;</span><span class="br0">&#40;</span>str.<span class="me1">getloc</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>.<span class="me1">thousands_sep</span><span class="br0">&#40;</span><span class="br0">&#41;</span></span></span>）数以千计的分离是在所有<span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">use_facet</span><span class="sy1">&lt;</span>std<span class="sy4">::</span><span class="me2">numpunct</span><span class="sy1">&lt;</span>charT<span class="sy1">&gt;&gt;</span><span class="br0">&#40;</span>str.<span class="me1">getloc</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>.<span class="me1">grouping</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">length</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy3">!</span><span class="sy1">=</span> <span class="nu0">0</span></span></span>使用，然后，如果小数点<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="st0">'.'</span></span></span>尚未积累，是rememebered的字符的位置，但的字符否则忽略。如果已经积累了小数点，该字符被丢弃，并结束第2阶段.<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">* If the character matches the thousands separator (<span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">use_facet</span><span class="sy1">&lt;</span>std<span class="sy4">::</span><span class="me2">numpunct</span><span class="sy1">&lt;</span>charT<span class="sy1">&gt;&gt;</span><span class="br0">&#40;</span>str.<span class="me1">getloc</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>.<span class="me1">thousands_sep</span><span class="br0">&#40;</span><span class="br0">&#41;</span></span></span>) and the thousands separation is in use at all <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">use_facet</span><span class="sy1">&lt;</span>std<span class="sy4">::</span><span class="me2">numpunct</span><span class="sy1">&lt;</span>charT<span class="sy1">&gt;&gt;</span><span class="br0">&#40;</span>str.<span class="me1">getloc</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>.<span class="me1">grouping</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">length</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy3">!</span><span class="sy1">=</span> <span class="nu0">0</span></span></span>, then if the decimal point <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="st0">'.'</span></span></span> has not yet been accumulated, the position of the character is rememebered, but the character is otherwise ignored. If the decimal point has already been accumulated, the character is discarded and Stage 2 terminates.</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</li><li><div class="t-tr-text">*在任何情况下，检查是否从前面的步骤所获得的<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">char</span></span></span>允许在输入字段中，将解析<span class="t-lc">std::scanf</span>给定的第1阶段中选择的转换符。如果它是允许的，它是在临时缓冲器和第2阶段重复积累。如果这是不允许的，第2阶段结束.<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">* In any case, the check is made whether the <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">char</span></span></span> obtained from the previous steps is allowed in the input field that would be parsed by <span class="t-lc">std::scanf</span> given the conversion specifier selected in Stage 1. If it is allowed, it is accumulated in a temporary buffer and Stage 2 repeats. If it is not allowed, Stage 2 terminates.</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</li></ul>
+<h4><span class="editsection">[<a href="http://zh.cppreference.com/mwiki/index.php?title=cpp/locale/num_get/get&amp;action=edit&amp;section=3" title="编辑章节：第3阶段：转换和存储">编辑</a>]</span> <span class="mw-headline" id=".E7.AC.AC3.E9.98.B6.E6.AE.B5.EF.BC.9A.E8.BD.AC.E6.8D.A2.E5.92.8C.E5.AD.98.E5.82.A8">第3阶段：转换和存储</span></h4>
+<ul><li> <div class="t-tr-text"><span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">char</span></span></span>s积累在第2阶段的序列被转换成一个数字值<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">The sequence of <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">char</span></span></span>s accumulated in Stage 2 is converted to a numeric value</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</li><li><div class="t-tr-text">*如果输入被解析为<span class="t-lc">std::scanf</span>的转换说明符中选择第1阶段<span class="t-mark">（至 C++11）</span><div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">* The input is parsed as if by <span class="t-lc">std::scanf</span> with the conversion specifier selected in Stage 1 <span class="t-mark">（至 C++11）</span></div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</li><li><div class="t-tr-text">*输入被解析为<span class="t-lc">std::strtoll</span>为有符号整数<code>v</code>，<span class="t-lc">std::strtoull</span>为无符号整数，浮点<code>v</code><span class="t-lc">std::strtold</span><code>v</code>，或<span class="t-mark">（C++11 起）</span><div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">* The input is parsed as if by <span class="t-lc">std::strtoll</span> for signed integer <code>v</code>, <span class="t-lc">std::strtoull</span> for unsigned integer <code>v</code>, or <span class="t-lc">std::strtold</span> for floating-point <code>v</code> <span class="t-mark">（C++11 起）</span></div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</li><li> <div class="t-tr-text">如果转换函数无法将整场，<span class="t-c"><span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span></span>存储在<code>v</code><span class="t-mark">（C++11 起）</span><div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">If the conversion function fails to convert the entire field, the value <span class="t-c"><span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span></span> is stored in <code>v</code> <span class="t-mark">（C++11 起）</span></div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</li><li> <div class="t-tr-text">如果转换功能结果正值过大，以适应<code>v</code>的类型，最积极的表示值存储在<code>v</code><span class="t-mark">（C++11 起）</span><div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">If the conversion function results in a positive value too large to fit in the type of <code>v</code>, the most positive representable value is stored in <code>v</code> <span class="t-mark">（C++11 起）</span></div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</li><li> <div class="t-tr-text">如果负值过大，以适应<code>v</code>的类型转换函数的结果，最负表示的值存储在<code>v</code><span class="t-mark">（C++11 起）</span><div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">If the conversion function results in a negative value too large to fit in the type of <code>v</code>, the most negative representable value is stored in <code>v</code> <span class="t-mark">（C++11 起）</span></div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</li><li> <div class="t-tr-text">在任何情况下，如果转换函数失败<span class="t-lc">std::ios_base::failbit</span>分配<code>err</code><div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">In any case, if the conversion function fails <span class="t-lc">std::ios_base::failbit</span> is assigned to <code>err</code></div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</li><li> <div class="t-tr-text">否则，转换的数字结果被存储在<code>v</code><div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">Otherwise, the numeric result of the conversion is stored in <code>v</code></div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</li><li><div class="t-tr-text">*如果类型<code>v</code><span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span>boolalpha一样没有被设置，那么，如果要被存储的值是<span class="t-c"><span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span></span>，<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span>被存储，如果要被存储的值是<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="nu0">1</span></span></span>，<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span>被保存时，其它的任意值被分配给<span class="t-lc">std::ios_base::failbit</span><code>err</code>.<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">* If the type of <code>v</code> is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span> and boolalpha is not set, then if the value to be stored is <span class="t-c"><span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span> is stored, if the value to be stored is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="nu0">1</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> is stored, for any other value <span class="t-lc">std::ios_base::failbit</span> is assigned to <code>err</code>.</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</li><li> <div class="t-tr-text">在此之后，数字分组检查。如果丢弃在第2阶段中的千位分隔符的位置的任何不匹配的分组提供<span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">use_facet</span><span class="sy1">&lt;</span>std<span class="sy4">::</span><span class="me2">numpunct</span><span class="sy1">&lt;</span>charT<span class="sy1">&gt;&gt;</span><span class="br0">&#40;</span>str.<span class="me1">getloc</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>.<span class="me1">grouping</span><span class="br0">&#40;</span><span class="br0">&#41;</span></span></span>，<span class="t-lc">std::ios_base::failbit</span>被分配给<code>err</code>.<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">After this, digit grouping is checked. if the position of any of the thousands separators discarded in Stage 2 does not match the grouping provided by <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">use_facet</span><span class="sy1">&lt;</span>std<span class="sy4">::</span><span class="me2">numpunct</span><span class="sy1">&lt;</span>charT<span class="sy1">&gt;&gt;</span><span class="br0">&#40;</span>str.<span class="me1">getloc</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>.<span class="me1">grouping</span><span class="br0">&#40;</span><span class="br0">&#41;</span></span></span>, <span class="t-lc">std::ios_base::failbit</span> is assigned to <code>err</code>.</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</li><li> <div class="t-tr-text">如果第2阶段的测试结束<span class="t-c"><span class="mw-geshi cpp source-cpp">in<span class="sy1">==</span>end</span></span>，<span class="t-c"><span class="mw-geshi cpp source-cpp">err<span class="sy3">|</span><span class="sy1">=</span><a href="../../io/ios_base/iostate.html"><span class="kw1372">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">eofbit</span></span></a></span></span>执行设置EOF位的.<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">If Stage 2 was terminated by the test <span class="t-c"><span class="mw-geshi cpp source-cpp">in<span class="sy1">==</span>end</span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp">err<span class="sy3">|</span><span class="sy1">=</span><a href="../../io/ios_base/iostate.html"><span class="kw1372">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">eofbit</span></span></a></span></span> is executed to set the eof bit.</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</li></ul>
+<h3><span class="editsection">[<a href="http://zh.cppreference.com/mwiki/index.php?title=cpp/locale/num_get/get&amp;action=edit&amp;section=4" title="编辑章节：返回值">编辑</a>]</span> <span class="mw-headline" id=".E8.BF.94.E5.9B.9E.E5.80.BC">返回值</span></h3>
+<p><code>in</code>
+</p>
+<h3><span class="editsection">[<a href="http://zh.cppreference.com/mwiki/index.php?title=cpp/locale/num_get/get&amp;action=edit&amp;section=5" title="编辑章节：注释">编辑</a>]</span> <span class="mw-headline" id=".E6.B3.A8.E9.87.8A">注释</span></h3>
+<div class="t-tr-text">在C + +98 / C + +03，如果发生错误，<code>v</code>保持不变。在C + 11，它被设置为一个值，如上述那样.<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">In C++98/C++03, if an error occurs, <code>v</code> is left unchanged. In C++11, it is set to a value as described above.</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+<h3><span class="editsection">[<a href="http://zh.cppreference.com/mwiki/index.php?title=cpp/locale/num_get/get&amp;action=edit&amp;section=6" title="编辑章节：示例">编辑</a>]</span> <span class="mw-headline" id=".E7.A4.BA.E4.BE.8B">示例</span></h3>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tr><td class="mbox-empty-cell"></td><td class="mbox-text" style="">本章尚未完成<br />原因：暂无示例 </td></tr></table>
+<h3><span class="editsection">[<a href="http://zh.cppreference.com/mwiki/index.php?title=cpp/locale/num_get/get&amp;action=edit&amp;section=7" title="编辑章节：另请参阅">编辑</a>]</span> <span class="mw-headline" id=".E5.8F.A6.E8.AF.B7.E5.8F.82.E9.98.85">另请参阅</span></h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../io/basic_istream/operator_gtgt.html" title="cpp/io/basic istream/operator gtgt"> operator&gt;&gt;</a></div></div>
+</td>
+<td>  <div class="t-tr-text"> 提取物格式的数据<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"> extracts formatted data</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div> <br /> <span class="t-mark">（公共成员函数of <code>std::basic_istream</code>）</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://zh.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_istream/dsc_operator_gtgt&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+</table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 7420/1000000
+Preprocessor generated node count: 16610/1000000
+Post‐expand include size: 181416/2097152 bytes
+Template argument size: 49274/2097152 bytes
+Highest expansion depth: 32/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_zh_:pcache:idhash:2870-0!*!0!!zh!2!zh!* and timestamp 20150213005514 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    来自“<a href="http://zh.cppreference.com/mwiki/index.php?title=cpp/locale/num_get/get&amp;oldid=38309">http://zh.cppreference.com/mwiki/index.php?title=cpp/locale/num_get/get&amp;oldid=38309</a>”                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://zh.cppreference.com/w/Special:%E9%A1%B5%E9%9D%A2%E5%88%86%E7%B1%BB" title="Special:页面分类">1个分类</a>：<ul><li><a href="http://zh.cppreference.com/mwiki/index.php?title=Category:Todo_with_reason&amp;action=edit&amp;redlink=1" class="new" title="Category:Todo with reason（页面不存在）">Todo with reason</a></li></ul></div></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer">
+                        <div id="cpp-navigation">
+            <h5>导航</h5>
+            <ul>
+<li id="n-mainpage-description"><a href="../../../首页.html" title="访问首页 [z]" accesskey="z">首页</a></li><li id="n-portal"><a href="http://zh.cppreference.com/w/Cppreference:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li><li id="n-currentevents"><a href="http://zh.cppreference.com/w/Cppreference:%E6%96%B0%E9%97%BB%E5%8A%A8%E6%80%81" title="查看当前事件的背景信息">新闻动态</a></li><li id="n-recentchanges"><a href="http://zh.cppreference.com/w/Special:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li><li id="n-randompage"><a href="http://zh.cppreference.com/w/Special:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="载入一个随机页面 [x]" accesskey="x">随机页面</a></li><li id="n-help"><a href="http://zh.cppreference.com/w/Help:%E7%9B%AE%E5%BD%95" title="查找帮助的地方">帮助</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox">
+            <h5><span>工具箱</span><a href="do_get.html#"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="http://zh.cppreference.com/w/Special:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/cpp/locale/num_get/get" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li><li id="t-recentchangeslinked"><a href="http://zh.cppreference.com/w/Special:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/cpp/locale/num_get/get" title="本页链入的页面的最近更改 [k]" accesskey="k">相关更改</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="上传文件 [u]" accesskey="u">上传文件</a></li><li id="t-specialpages"><a href="http://zh.cppreference.com/w/Special:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面的列表 [q]" accesskey="q">特殊页面</a></li><li id="t-print"><a href="http://zh.cppreference.com/mwiki/index.php?title=cpp/locale/num_get/get&amp;printable=yes" rel="alternate" title="本页面的可打印版本 [p]" accesskey="p">打印版本</a></li><li id="t-permalink"><a href="http://zh.cppreference.com/mwiki/index.php?title=cpp/locale/num_get/get&amp;oldid=38309" title="本页面该版本的永久链接">永久链接</a></li><li id="t-info"><a href="http://zh.cppreference.com/mwiki/index.php?title=cpp/locale/num_get/get&amp;action=info">页面信息</a></li>            </ul>
+        </div>
+                        <div id="cpp-languages">
+            <div><ul><li>其他语言</li></ul></div>
+            <div><ul>
+<li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/locale/num_get/get" title="cpp/locale/num get/get" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-en"><a href="http://en.cppreference.com/w/cpp/locale/num_get/get" title="cpp/locale/num get/get" lang="en" hreflang="en">English</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/locale/num_get/get" title="cpp/locale/num get/get" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/locale/num_get/get" title="cpp/locale/num get/get" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/locale/num_get/get" title="cpp/locale/num get/get" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/locale/num_get/get" title="cpp/locale/num get/get" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/locale/num_get/get" title="cpp/locale/num get/get" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/locale/num_get/get" title="cpp/locale/num get/get" lang="ru" hreflang="ru">Русский</a></li>            </ul></div>
+        </div>
+            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> 本页面最后修改于2014年10月26日 (星期日) 17:54。</li>
+                                    <li id="footer-info-viewcount">此页面已被浏览过423次。</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="http://zh.cppreference.com/w/Cppreference:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="Cppreference:隐私权政策">隐私政策</a></li>
+                                    <li id="footer-places-about"><a href="http://zh.cppreference.com/w/Cppreference:%E5%85%B3%E4%BA%8E" title="Cppreference:关于">关于cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="http://zh.cppreference.com/w/Cppreference:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="Cppreference:免责声明">免责声明</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="http://www.mediawiki.org/"><img src="../../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88" /></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88" /></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../../mwiki/load.php%3Fdebug=false&amp;lang=zh&amp;modules=skins.cppreference2&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ShowEditLinks"], null, true);
+}</script>
+<script src="../../../../mwiki/load.php%3Fdebug=false&amp;lang=zh&amp;modules=site&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 12.187 secs. -->
+	</body>
+<!-- Cached 20150213005515 -->
+</html>

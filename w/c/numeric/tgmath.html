@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr" class="client-nojs">
+<head>
+<title>Type-generic math - cppreference.com</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.21.2" />
+<meta name="robots" content="noindex" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="http://zh.cppreference.com/mwiki/index.php?title=c/numeric/tgmath&amp;action=edit" />
+<link rel="edit" title="编辑" href="http://zh.cppreference.com/mwiki/index.php?title=c/numeric/tgmath&amp;action=edit" />
+<link rel="shortcut icon" href="../../../favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../mwiki/opensearch_desc.php" title="cppreference.com (zh)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://zh.cppreference.com/mwiki/api.php?action=rsd" />
+<link rel="alternate" hreflang="zh" href="http://zh.cppreference.com/mwiki/index.php?title=c/numeric/tgmath&amp;variant=zh" />
+<link rel="alternate" hreflang="zh-hans" href="http://zh.cppreference.com/mwiki/index.php?title=c/numeric/tgmath&amp;variant=zh-hans" />
+<link rel="alternate" hreflang="zh-hant" href="http://zh.cppreference.com/mwiki/index.php?title=c/numeric/tgmath&amp;variant=zh-hant" />
+<link rel="alternate" hreflang="zh-cn" href="http://zh.cppreference.com/mwiki/index.php?title=c/numeric/tgmath&amp;variant=zh-cn" />
+<link rel="alternate" hreflang="zh-hk" href="http://zh.cppreference.com/mwiki/index.php?title=c/numeric/tgmath&amp;variant=zh-hk" />
+<link rel="alternate" hreflang="zh-mo" href="http://zh.cppreference.com/mwiki/index.php?title=c/numeric/tgmath&amp;variant=zh-mo" />
+<link rel="alternate" hreflang="zh-my" href="http://zh.cppreference.com/mwiki/index.php?title=c/numeric/tgmath&amp;variant=zh-my" />
+<link rel="alternate" hreflang="zh-sg" href="http://zh.cppreference.com/mwiki/index.php?title=c/numeric/tgmath&amp;variant=zh-sg" />
+<link rel="alternate" hreflang="zh-tw" href="http://zh.cppreference.com/mwiki/index.php?title=c/numeric/tgmath&amp;variant=zh-tw" />
+<link rel="alternate" type="application/atom+xml" title="cppreference.com的Atom" href="http://zh.cppreference.com/mwiki/index.php?title=Special:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="../../../mwiki/load.php%3Fdebug=false&amp;lang=zh&amp;modules=ext.gadget.ShowEditLinks%257Cext.rtlcite%257Cmediawiki.legacy.commonPrint%252Cshared%257Cskins.cppreference2&amp;only=styles&amp;skin=cppreference2&amp;*.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../../../mwiki/load.php%3Fdebug=false&amp;lang=zh&amp;modules=site&amp;only=styles&amp;skin=cppreference2&amp;*.css" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-css:7:15cea3ec788a65b5187d4018eed543bf */</style>
+
+<script src="../../../mwiki/load.php%3Fdebug=false&amp;lang=zh&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"c/numeric/tgmath","wgTitle":"c/numeric/tgmath","wgCurRevisionId":37747,"wgArticleId":1219,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Todo with reason"],"wgBreakFrames":false,"wgPageContentLanguage":"zh","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"zh","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgMonthNamesShort":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRelevantPageName":"c/numeric/tgmath","wgUserVariant":"zh","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh","language":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ShowEditLinks":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-js:7:aff3edf20b05a275fc6703031b87b0f7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-c {line-height: normal;}
+.source-c li, .source-c pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for c
+ * CSS class: source-c, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.c.source-c .de1, .c.source-c .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.c.source-c  {font-family:monospace;}
+.c.source-c .imp {font-weight: bold; color: red;}
+.c.source-c li, .c.source-c .li1 {font-weight: normal; vertical-align:top;}
+.c.source-c .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.c.source-c .li2 {font-weight: bold; vertical-align:top;}
+.c.source-c .kw1 {color: #0000dd;}
+.c.source-c .kw2 {color: #0000ff;}
+.c.source-c .kw3 {color: #0000dd;}
+.c.source-c .kw4 {color: #0000ff;}
+.c.source-c .co1 {color: #909090;}
+.c.source-c .co2 {color: #339900;}
+.c.source-c .coMULTI {color: #ff0000; font-style: italic;}
+.c.source-c .es0 {color: #008000; font-weight: bold;}
+.c.source-c .es1 {color: #008000; font-weight: bold;}
+.c.source-c .es2 {color: #008000; font-weight: bold;}
+.c.source-c .es3 {color: #008000; font-weight: bold;}
+.c.source-c .es4 {color: #008000; font-weight: bold;}
+.c.source-c .es5 {color: #008000; font-weight: bold;}
+.c.source-c .br0 {color: #008000;}
+.c.source-c .sy0 {color: #008000;}
+.c.source-c .sy1 {color: #000080;}
+.c.source-c .sy2 {color: #000040;}
+.c.source-c .sy3 {color: #000040;}
+.c.source-c .sy4 {color: #008080;}
+.c.source-c .st0 {color: #008000;}
+.c.source-c .nu0 {color: #000080;}
+.c.source-c .nu6 {color:#000080;}
+.c.source-c .nu8 {color:#000080;}
+.c.source-c .nu12 {color:#000080;}
+.c.source-c .nu16 {color:#000080;}
+.c.source-c .nu17 {color:#000080;}
+.c.source-c .nu18 {color:#000080;}
+.c.source-c .nu19 {color:#000080;}
+.c.source-c .ln-xtra, .c.source-c li.ln-xtra, .c.source-c div.ln-xtra {background-color: #ffc;}
+.c.source-c span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-c_numeric_tgmath skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="../../../index.html">
+                        cppreference.com                        </a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+	<h5><label for="searchInput">搜索</label></h5>
+	<form action="http://zh.cppreference.com/mwiki/index.php" id="searchform">
+		<input type='hidden' name="title" value="Special:搜索"/>
+				<div id="simpleSearch">
+						<input name="search" title="在cppreference.com中搜索 [f]" accesskey="f" id="searchInput" />						<button type="submit" name="button" title="搜索含这些文字的页面" id="searchButton"><img src="../../../mwiki/skins/cppreference2/images/search-ltr.png%3F303" alt="搜索" /></button>					</div>
+			</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="http://zh.cppreference.com/mwiki/index.php?title=Special:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=c%2Fnumeric%2Ftgmath&amp;type=signup">创建账户</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="http://zh.cppreference.com/mwiki/index.php?title=Special:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=c%2Fnumeric%2Ftgmath" title="我们鼓励你登录，不过这不是强制的 [o]" accesskey="o">登录</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>名字空间</h5>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="tgmath.html"  title="查看内容页面 [c]" accesskey="c">页面</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://zh.cppreference.com/mwiki/index.php?title=Talk:c/numeric/tgmath&amp;action=edit&amp;redlink=1"  title="有关内容页面的讨论 [t]" accesskey="t">讨论</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu">
+		<h5><span>变换</span><a href="tgmath.html#"></a></h5>
+	<div class="menu">
+		<ul>
+							<li id="ca-varlang-0" class="selected"><a href="http://zh.cppreference.com/mwiki/index.php?title=c/numeric/tgmath&amp;variant=zh" >不转换</a></li>
+							<li id="ca-varlang-1"><a href="http://zh.cppreference.com/mwiki/index.php?title=c/numeric/tgmath&amp;variant=zh-hans" >简体</a></li>
+							<li id="ca-varlang-2"><a href="http://zh.cppreference.com/mwiki/index.php?title=c/numeric/tgmath&amp;variant=zh-hant" >繁體</a></li>
+							<li id="ca-varlang-3"><a href="http://zh.cppreference.com/mwiki/index.php?title=c/numeric/tgmath&amp;variant=zh-cn" >大陆简体</a></li>
+							<li id="ca-varlang-4"><a href="http://zh.cppreference.com/mwiki/index.php?title=c/numeric/tgmath&amp;variant=zh-hk" >香港繁體</a></li>
+							<li id="ca-varlang-5"><a href="http://zh.cppreference.com/mwiki/index.php?title=c/numeric/tgmath&amp;variant=zh-mo" >澳門繁體</a></li>
+							<li id="ca-varlang-6"><a href="http://zh.cppreference.com/mwiki/index.php?title=c/numeric/tgmath&amp;variant=zh-my" >大马简体</a></li>
+							<li id="ca-varlang-7"><a href="http://zh.cppreference.com/mwiki/index.php?title=c/numeric/tgmath&amp;variant=zh-sg" >新加坡简体</a></li>
+							<li id="ca-varlang-8"><a href="http://zh.cppreference.com/mwiki/index.php?title=c/numeric/tgmath&amp;variant=zh-tw" >台灣正體</a></li>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>查看</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="tgmath.html" >查看</a></span></li>
+					<li id="ca-edit"><span><a href="http://zh.cppreference.com/mwiki/index.php?title=c/numeric/tgmath&amp;action=edit"  title="你可以编辑本页面。请在保存前使用预览按钮。 [e]" accesskey="e">编辑</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://zh.cppreference.com/mwiki/index.php?title=c/numeric/tgmath&amp;action=history"  title="本页面过去的版本 [h]" accesskey="h">历史</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>操作</span><a href="tgmath.html#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">Type-generic math</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">来自cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../c.html" title="c">c</a>&lrm; | <a href="../numeric.html" title="c/numeric">numeric</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="zh" dir="ltr" class="mw-content-ltr"><table class="plainlinks fmbox fmbox-system" style="font-size:0.9em; line-height: 1em">
+<tr>
+<td class="mbox-image">
+  <img alt="" src="../../../../upload.cppreference.com/mwiki/images/3/31/Imbox_notice.png" width="40" height="40" /></td>
+<td class="mbox-text" style=""> <p>该页由英文版wiki使用<a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a>机器翻译而来。
+</p><p>
+<p>该翻译可能存在错误或用词不当。鼠标停留在文本上可以看到原版本。你可以帮助我们修正错误或改进翻译。参见说明请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>.
+</p>
+</p>
+<p class="t-tr-note-click">
+<a href="http://en.cppreference.com/w/c/numeric/tgmath" class="extiw" title="en:c/numeric/tgmath"> 点击这里参见该页的英文版本</a>
+</p> </td>
+</tr>
+</table>
+<p><!-- META_NOINDEX -->
+</p>
+<div class="t-navbar" style=""><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../c.html" title="c"> C</a><div class="t-navbar-menu"><div><div>
+<table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+
+<tr>
+<td colspan="5">  <a href="../language.html" title="c/language"> 语言</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../header.html" title="c/header"> 标准库</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../types.html" title="c/types"> 类型支持</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../memory.html" title="c/memory"> 动态内存管理</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../error.html" title="c/error"> 错误处理</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../program.html" title="c/program"> 程序工具</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../chrono.html" title="c/chrono"> 日期和时间工具</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../string.html" title="c/string"> 字符串库</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../algorithm.html" title="c/algorithm"> 算法</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../numeric.html" title="c/numeric"> 数值计算</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../io.html" title="c/io"> 输入/输出支持</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../locale.html" title="c/locale"> 本地化支持</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../thread.html" title="c/thread"> 线程支持</a> <span class="t-mark">（C11）</span>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../atomic.html" title="c/atomic"> 原子操作</a> <span class="t-mark">（C11）</span>
+</td></tr>
+</table>
+</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://zh.cppreference.com/mwiki/index.php?title=Template:c/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../numeric.html" title="c/numeric">数值计算</a><div class="t-navbar-menu"><div><div>
+<table class="t-nv-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5">  <a href="math.html" title="c/numeric/math">常见的数学函数</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="fenv.html" title="c/numeric/fenv">浮点环境</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="complex.html" title="c/numeric/complex">Complex number arithmetics</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="random.html" title="c/numeric/random">随机数的产生</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <strong class="selflink">类型的通用数学</strong>
+</td></tr>
+</table>
+</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://zh.cppreference.com/mwiki/index.php?title=Template:c/numeric/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div></div>
+<div class="t-tr-text">头<code>&lt;tgmath.h&gt;</code>包括头<code>&lt;math.h&gt;</code><code>&lt;complex.h&gt;</code>，并定义了几种类型的通用宏。这些宏确定实际要调用的函数的参数的类型.<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">The header <code>&lt;tgmath.h&gt;</code> includes the headers <code>&lt;math.h&gt;</code> and <code>&lt;complex.h&gt;</code> and defines several type-generic macros. These macros determines the actual function to call depending on the types of the parameters.</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+<h3><span class="editsection">[<a href="http://zh.cppreference.com/mwiki/index.php?title=c/numeric/tgmath&amp;action=edit&amp;section=1" title="编辑章节：三角函数，双曲线，指数函数Ǌ">编辑</a>]</span> <span class="mw-headline" id=".E4.B8.89.E8.A7.92.E5.87.BD.E6.95.B0.EF.BC.8C.E5.8F.8C.E6.9B.B2.E7.BA.BF.EF.BC.8C.E6.8C.87.E6.95.B0.E5.87.BD.E6.95.B0.C7.8A">三角函数，双曲线，指数函数Ǌ</span></h3>
+<div class="t-tr-text">A型通用宏<code>XXX</code>调用<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">A type-generic macro <code>XXX</code> calls either of:</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+<ul><li> <div class="t-tr-text">真正的功能<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">real function:</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</li></ul>
+<dl><dd><ul><li> <div class="t-tr-text"><span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">float</span></span></span>变种<code>XXXf</code><div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"><span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">float</span></span></span> variant <code>XXXf</code></div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</li><li> <div class="t-tr-text"><span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">double</span></span></span>变种<code>XXX</code><div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"><span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">double</span></span></span> variant <code>XXX</code></div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</li><li> <div class="t-tr-text"><span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">long</span> <span class="kw4">double</span></span></span>变种<code>XXXl</code><div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"><span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">long</span> <span class="kw4">double</span></span></span> variant <code>XXXl</code></div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</li></ul>
+</dd></dl>
+<ul><li> <div class="t-tr-text">复杂的功能<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">complex function:</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</li></ul>
+<dl><dd><ul><li> <div class="t-tr-text"><span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">float</span></span></span>变种<code>cXXXf</code><div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"><span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">float</span></span></span> variant <code>cXXXf</code></div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</li><li> <div class="t-tr-text"><span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">double</span></span></span>变种<code>cXXX</code><div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"><span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">double</span></span></span> variant <code>cXXX</code></div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</li><li> <div class="t-tr-text"><span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">long</span> <span class="kw4">double</span></span></span>变种<code>cXXXl</code><div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"><span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">long</span> <span class="kw4">double</span></span></span> variant <code>cXXXl</code></div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</li></ul>
+</dd></dl>
+<div class="t-tr-text">上述规则的一个例外是<code>exp</code>（请参阅下表）<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">An exception to the above rule is <code>exp</code> (see the table below).</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+<div class="t-tr-text">调用的函数如下：<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">The function to call is determined as follows:</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+<ul><li> <div class="t-tr-text">如果任何参数是复杂的，那么复杂的函数被调用，否则，真正的函数被调用.<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">If any of the parameters is complex, then the complex function is called, otherwise the real function is called.</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</li><li> <div class="t-tr-text">如果任何参数是<span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">long</span> <span class="kw4">double</span></span></span>，然后<span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">long</span> <span class="kw4">double</span></span></span>变种被调用。否则，如果任何参数是<span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">double</span></span></span>，然后被称为<span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">double</span></span></span>变种。否则，<span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">float</span></span></span>的变体被称为.<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">If any of the parameters is <span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">long</span> <span class="kw4">double</span></span></span>, then the <span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">long</span> <span class="kw4">double</span></span></span> variant is called. Otherwise, if any of the parameters is <span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">double</span></span></span>, then the <span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">double</span></span></span> variant is called. Otherwise, <span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">float</span></span></span> variant is called.</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</li><li> <div class="t-tr-text">的行为是未定义的参数与相应的函数的参数是不兼容的。 <table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tr><td class="mbox-empty-cell"></td><td class="mbox-text" style="">本章尚未完成<br />原因：what's meant by incompatible? </td></tr></table><div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">The behavior is undefined is any of the parameters is incompatible with the corresponding argument of the function. <table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tr><td class="mbox-empty-cell"></td><td class="mbox-text" style="">本章尚未完成<br />原因：what's meant by incompatible? </td></tr></table></div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</li></ul>
+<div class="t-tr-text">类型通用的宏如下：<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">The type-generic macros are as follows:</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+<table class="wikitable">
+
+<tr>
+<th> Type-generic macro
+</th>
+<th colspan="3"> Real function <br /> variants
+</th>
+<th colspan="3"> Complex function <br /> variants
+</th></tr>
+<tr>
+<th style="height: 8em;"> &#160;
+</th>
+<th> <div class="t-vertical"><div><span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">float</span></span></span></div></div>
+</th>
+<th> <div class="t-vertical"><div><span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">double</span></span></span></div></div>
+</th>
+<th> <div class="t-vertical"><div><span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">long</span> <span class="kw4">double</span></span></span></div></div>
+</th>
+<th> <div class="t-vertical"><div><span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">float</span></span></span></div></div>
+</th>
+<th> <div class="t-vertical"><div><span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">double</span></span></span></div></div>
+</th>
+<th> <div class="t-vertical"><div><span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">long</span> <span class="kw4">double</span></span></span></div></div>
+</th></tr>
+
+<tr>
+<th> asin
+</th>
+<td> <a href="math/asin.html" title="c/numeric/math/asin"><tt>asinf</tt></a>
+</td>
+<td> <a href="math/asin.html" title="c/numeric/math/asin"><tt>asin</tt></a>
+</td>
+<td> <a href="math/asin.html" title="c/numeric/math/asin"><tt>asinl</tt></a>
+</td>
+<td> <a href="complex/casin.html" title="c/numeric/complex/casin"><tt>casinf</tt></a>
+</td>
+<td> <a href="complex/casin.html" title="c/numeric/complex/casin"><tt>casin</tt></a>
+</td>
+<td> <a href="complex/casin.html" title="c/numeric/complex/casin"><tt>casinl</tt></a>
+</td></tr>
+<tr>
+<th> acos
+</th>
+<td> <a href="math/acos.html" title="c/numeric/math/acos"><tt>acosf</tt></a>
+</td>
+<td> <a href="math/acos.html" title="c/numeric/math/acos"><tt>acos</tt></a>
+</td>
+<td> <a href="math/acos.html" title="c/numeric/math/acos"><tt>acosl</tt></a>
+</td>
+<td> <a href="complex/cacos.html" title="c/numeric/complex/cacos"><tt>cacosf</tt></a>
+</td>
+<td> <a href="complex/cacos.html" title="c/numeric/complex/cacos"><tt>cacos</tt></a>
+</td>
+<td> <a href="complex/cacos.html" title="c/numeric/complex/cacos"><tt>cacosl</tt></a>
+</td></tr>
+<tr>
+<th> atan
+</th>
+<td> <a href="math/atan.html" title="c/numeric/math/atan"><tt>atanf</tt></a>
+</td>
+<td> <a href="math/atan.html" title="c/numeric/math/atan"><tt>atan</tt></a>
+</td>
+<td> <a href="math/atan.html" title="c/numeric/math/atan"><tt>atanl</tt></a>
+</td>
+<td> <a href="complex/catan.html" title="c/numeric/complex/catan"><tt>catanf</tt></a>
+</td>
+<td> <a href="complex/catan.html" title="c/numeric/complex/catan"><tt>catan</tt></a>
+</td>
+<td> <a href="complex/catan.html" title="c/numeric/complex/catan"><tt>catanl</tt></a>
+</td></tr>
+<tr>
+<th> asinh
+</th>
+<td> <a href="math/asinh.html" title="c/numeric/math/asinh"><tt>asinhf</tt></a>
+</td>
+<td> <a href="math/asinh.html" title="c/numeric/math/asinh"><tt>asinh</tt></a>
+</td>
+<td> <a href="math/asinh.html" title="c/numeric/math/asinh"><tt>asinhl</tt></a>
+</td>
+<td> <a href="complex/casinh.html" title="c/numeric/complex/casinh"><tt>casinhf</tt></a>
+</td>
+<td> <a href="complex/casinh.html" title="c/numeric/complex/casinh"><tt>casinh</tt></a>
+</td>
+<td> <a href="complex/casinh.html" title="c/numeric/complex/casinh"><tt>casinhl</tt></a>
+</td></tr>
+<tr>
+<th> acosh
+</th>
+<td> <a href="math/acosh.html" title="c/numeric/math/acosh"><tt>acoshf</tt></a>
+</td>
+<td> <a href="math/acosh.html" title="c/numeric/math/acosh"><tt>acosh</tt></a>
+</td>
+<td> <a href="math/acosh.html" title="c/numeric/math/acosh"><tt>acoshl</tt></a>
+</td>
+<td> <a href="complex/cacosh.html" title="c/numeric/complex/cacosh"><tt>cacoshf</tt></a>
+</td>
+<td> <a href="complex/cacosh.html" title="c/numeric/complex/cacosh"><tt>cacosh</tt></a>
+</td>
+<td> <a href="complex/cacosh.html" title="c/numeric/complex/cacosh"><tt>cacoshl</tt></a>
+</td></tr>
+<tr>
+<th> atanh
+</th>
+<td> <a href="math/atanh.html" title="c/numeric/math/atanh"><tt>atanhf</tt></a>
+</td>
+<td> <a href="math/atanh.html" title="c/numeric/math/atanh"><tt>atanh</tt></a>
+</td>
+<td> <a href="math/atanh.html" title="c/numeric/math/atanh"><tt>atanhl</tt></a>
+</td>
+<td> <a href="complex/catanh.html" title="c/numeric/complex/catanh"><tt>catanhf</tt></a>
+</td>
+<td> <a href="complex/catanh.html" title="c/numeric/complex/catanh"><tt>catanh</tt></a>
+</td>
+<td> <a href="complex/catanh.html" title="c/numeric/complex/catanh"><tt>catanhl</tt></a>
+</td></tr>
+<tr>
+<th> sin
+</th>
+<td> <a href="math/sin.html" title="c/numeric/math/sin"><tt>sinf</tt></a>
+</td>
+<td> <a href="math/sin.html" title="c/numeric/math/sin"><tt>sin</tt></a>
+</td>
+<td> <a href="math/sin.html" title="c/numeric/math/sin"><tt>sinl</tt></a>
+</td>
+<td> <a href="complex/csin.html" title="c/numeric/complex/csin"><tt>csinf</tt></a>
+</td>
+<td> <a href="complex/csin.html" title="c/numeric/complex/csin"><tt>csin</tt></a>
+</td>
+<td> <a href="complex/csin.html" title="c/numeric/complex/csin"><tt>csinl</tt></a>
+</td></tr>
+<tr>
+<th> cos
+</th>
+<td> <a href="math/cos.html" title="c/numeric/math/cos"><tt>cosf</tt></a>
+</td>
+<td> <a href="math/cos.html" title="c/numeric/math/cos"><tt>cos</tt></a>
+</td>
+<td> <a href="math/cos.html" title="c/numeric/math/cos"><tt>cosl</tt></a>
+</td>
+<td> <a href="complex/ccos.html" title="c/numeric/complex/ccos"><tt>ccosf</tt></a>
+</td>
+<td> <a href="complex/ccos.html" title="c/numeric/complex/ccos"><tt>ccos</tt></a>
+</td>
+<td> <a href="complex/ccos.html" title="c/numeric/complex/ccos"><tt>ccosl</tt></a>
+</td></tr>
+<tr>
+<th> tan
+</th>
+<td> <a href="math/tan.html" title="c/numeric/math/tan"><tt>tanf</tt></a>
+</td>
+<td> <a href="math/tan.html" title="c/numeric/math/tan"><tt>tan</tt></a>
+</td>
+<td> <a href="math/tan.html" title="c/numeric/math/tan"><tt>tanl</tt></a>
+</td>
+<td> <a href="complex/ctan.html" title="c/numeric/complex/ctan"><tt>ctanf</tt></a>
+</td>
+<td> <a href="complex/ctan.html" title="c/numeric/complex/ctan"><tt>ctan</tt></a>
+</td>
+<td> <a href="complex/ctan.html" title="c/numeric/complex/ctan"><tt>ctanl</tt></a>
+</td></tr>
+<tr>
+<th> sinh
+</th>
+<td> <a href="math/sinh.html" title="c/numeric/math/sinh"><tt>sinhf</tt></a>
+</td>
+<td> <a href="math/sinh.html" title="c/numeric/math/sinh"><tt>sinh</tt></a>
+</td>
+<td> <a href="math/sinh.html" title="c/numeric/math/sinh"><tt>sinhl</tt></a>
+</td>
+<td> <a href="complex/csinh.html" title="c/numeric/complex/csinh"><tt>csinhf</tt></a>
+</td>
+<td> <a href="complex/csinh.html" title="c/numeric/complex/csinh"><tt>csinh</tt></a>
+</td>
+<td> <a href="complex/csinh.html" title="c/numeric/complex/csinh"><tt>csinhl</tt></a>
+</td></tr>
+<tr>
+<th> cosh
+</th>
+<td> <a href="math/cosh.html" title="c/numeric/math/cosh"><tt>coshf</tt></a>
+</td>
+<td> <a href="math/cosh.html" title="c/numeric/math/cosh"><tt>cosh</tt></a>
+</td>
+<td> <a href="math/cosh.html" title="c/numeric/math/cosh"><tt>coshl</tt></a>
+</td>
+<td> <a href="complex/ccosh.html" title="c/numeric/complex/ccosh"><tt>ccoshf</tt></a>
+</td>
+<td> <a href="complex/ccosh.html" title="c/numeric/complex/ccosh"><tt>ccosh</tt></a>
+</td>
+<td> <a href="complex/ccosh.html" title="c/numeric/complex/ccosh"><tt>ccoshl</tt></a>
+</td></tr>
+<tr>
+<th> tanh
+</th>
+<td> <a href="math/tanh.html" title="c/numeric/math/tanh"><tt>tanhf</tt></a>
+</td>
+<td> <a href="math/tanh.html" title="c/numeric/math/tanh"><tt>tanh</tt></a>
+</td>
+<td> <a href="math/tanh.html" title="c/numeric/math/tanh"><tt>tanhl</tt></a>
+</td>
+<td> <a href="complex/ctanh.html" title="c/numeric/complex/ctanh"><tt>ctanhf</tt></a>
+</td>
+<td> <a href="complex/ctanh.html" title="c/numeric/complex/ctanh"><tt>ctanh</tt></a>
+</td>
+<td> <a href="complex/ctanh.html" title="c/numeric/complex/ctanh"><tt>ctanhl</tt></a>
+</td></tr>
+<tr>
+<th> exp
+</th>
+<td> <a href="math/exp.html" title="c/numeric/math/exp"><tt>expf</tt></a>
+</td>
+<td> <a href="math/exp.html" title="c/numeric/math/exp"><tt>exp</tt></a>
+</td>
+<td> <a href="math/exp.html" title="c/numeric/math/exp"><tt>expl</tt></a>
+</td>
+<td> <a href="complex/cexp.html" title="c/numeric/complex/cexp"><tt>cexpf</tt></a>
+</td>
+<td> <a href="complex/cexp.html" title="c/numeric/complex/cexp"><tt>cexp</tt></a>
+</td>
+<td> <a href="complex/cexp.html" title="c/numeric/complex/cexp"><tt>cexpl</tt></a>
+</td></tr>
+<tr>
+<th> log
+</th>
+<td> <a href="math/log.html" title="c/numeric/math/log"><tt>logf</tt></a>
+</td>
+<td> <a href="math/log.html" title="c/numeric/math/log"><tt>log</tt></a>
+</td>
+<td> <a href="math/log.html" title="c/numeric/math/log"><tt>logl</tt></a>
+</td>
+<td> <a href="complex/clog.html" title="c/numeric/complex/clog"><tt>clogf</tt></a>
+</td>
+<td> <a href="complex/clog.html" title="c/numeric/complex/clog"><tt>clog</tt></a>
+</td>
+<td> <a href="complex/clog.html" title="c/numeric/complex/clog"><tt>clogl</tt></a>
+</td></tr>
+<tr>
+<th> pow
+</th>
+<td> <a href="math/pow.html" title="c/numeric/math/pow"><tt>powf</tt></a>
+</td>
+<td> <a href="math/pow.html" title="c/numeric/math/pow"><tt>pow</tt></a>
+</td>
+<td> <a href="math/pow.html" title="c/numeric/math/pow"><tt>powl</tt></a>
+</td>
+<td> <a href="complex/cpow.html" title="c/numeric/complex/cpow"><tt>cpowf</tt></a>
+</td>
+<td> <a href="complex/cpow.html" title="c/numeric/complex/cpow"><tt>cpow</tt></a>
+</td>
+<td> <a href="complex/cpow.html" title="c/numeric/complex/cpow"><tt>cpowl</tt></a>
+</td></tr>
+<tr>
+<th> sqrt
+</th>
+<td> <a href="math/sqrt.html" title="c/numeric/math/sqrt"><tt>sqrtf</tt></a>
+</td>
+<td> <a href="math/sqrt.html" title="c/numeric/math/sqrt"><tt>sqrt</tt></a>
+</td>
+<td> <a href="math/sqrt.html" title="c/numeric/math/sqrt"><tt>sqrtl</tt></a>
+</td>
+<td> <a href="complex/csqrt.html" title="c/numeric/complex/csqrt"><tt>csqrtf</tt></a>
+</td>
+<td> <a href="complex/csqrt.html" title="c/numeric/complex/csqrt"><tt>csqrt</tt></a>
+</td>
+<td> <a href="complex/csqrt.html" title="c/numeric/complex/csqrt"><tt>csqrtl</tt></a>
+</td></tr>
+<tr>
+<th> abs
+</th>
+<td> <a href="math/abs.html" title="c/numeric/math/abs"><tt>fabsf</tt></a>
+</td>
+<td> <a href="math/abs.html" title="c/numeric/math/abs"><tt>fabs</tt></a>
+</td>
+<td> <a href="math/abs.html" title="c/numeric/math/abs"><tt>fabsl</tt></a>
+</td>
+<td> <a href="complex/cabs.html" title="c/numeric/complex/cabs"><tt>cabsf</tt></a>
+</td>
+<td> <a href="complex/cabs.html" title="c/numeric/complex/cabs"><tt>cabs</tt></a>
+</td>
+<td> <a href="complex/cabs.html" title="c/numeric/complex/cabs"><tt>cabsl</tt></a>
+</td></tr>
+<tr>
+<th> exp
+</th>
+<td> <a href="math/exp.html" title="c/numeric/math/exp"><tt>expf</tt></a>
+</td>
+<td> <a href="math/exp.html" title="c/numeric/math/exp"><tt>exp</tt></a>
+</td>
+<td> <a href="math/exp.html" title="c/numeric/math/exp"><tt>expl</tt></a>
+</td>
+<td> <a href="complex/cexp.html" title="c/numeric/complex/cexp"><tt>cexpf</tt></a>
+</td>
+<td> <a href="complex/cexp.html" title="c/numeric/complex/cexp"><tt>cexp</tt></a>
+</td>
+<td> <a href="complex/cexp.html" title="c/numeric/complex/cexp"><tt>cexpl</tt></a>
+</td></tr></table>
+<h3><span class="editsection">[<a href="http://zh.cppreference.com/mwiki/index.php?title=c/numeric/tgmath&amp;action=edit&amp;section=2" title="编辑章节：其它功能Ǌ">编辑</a>]</span> <span class="mw-headline" id=".E5.85.B6.E5.AE.83.E5.8A.9F.E8.83.BD.C7.8A">其它功能Ǌ</span></h3>
+<div class="t-tr-text">A型通用宏<code>XXX</code>的变种，一个真正的函数调用<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">A type-generic macro <code>XXX</code> calls either of the variants of a real function:</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+<ul><li> <div class="t-tr-text"><span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">float</span></span></span>变种<code>XXXf</code><div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"><span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">float</span></span></span> variant <code>XXXf</code></div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</li><li> <div class="t-tr-text"><span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">double</span></span></span>变种<code>XXX</code><div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"><span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">double</span></span></span> variant <code>XXX</code></div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</li><li> <div class="t-tr-text"><span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">long</span> <span class="kw4">double</span></span></span>变种<code>XXXl</code><div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"><span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">long</span> <span class="kw4">double</span></span></span> variant <code>XXXl</code></div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</li></ul>
+<div class="t-tr-text">请注意，有没有<code>modf</code>类型通用的宏.<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">Note, there's no <code>modf</code> type-generic macro.</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+<div class="t-tr-text">调用的函数如下：<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">The function to call is determined as follows:</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+<ul><li> <div class="t-tr-text">如果任何参数是<span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">long</span> <span class="kw4">double</span></span></span>，然后<span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">long</span> <span class="kw4">double</span></span></span>变种被调用。否则，如果任何参数是<span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">double</span></span></span>，然后被称为<span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">double</span></span></span>变种。否则，<span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">float</span></span></span>的变体被称为.<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">If any of the parameters is <span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">long</span> <span class="kw4">double</span></span></span>, then the <span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">long</span> <span class="kw4">double</span></span></span> variant is called. Otherwise, if any of the parameters is <span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">double</span></span></span>, then the <span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">double</span></span></span> variant is called. Otherwise, <span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">float</span></span></span> variant is called.</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</li><li> <div class="t-tr-text">的行为是未定义的参数与相应的函数的参数是不兼容的。 <table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tr><td class="mbox-empty-cell"></td><td class="mbox-text" style="">本章尚未完成<br />原因：what's meant by incompatible? </td></tr></table><div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">The behavior is undefined is any of the parameters is incompatible with the corresponding argument of the function. <table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tr><td class="mbox-empty-cell"></td><td class="mbox-text" style="">本章尚未完成<br />原因：what's meant by incompatible? </td></tr></table></div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</li></ul>
+<table class="wikitable">
+
+<tr>
+<th> Type-generic macro
+</th>
+<th colspan="3"> Real function <br /> variants
+</th></tr>
+<tr>
+<th style="height: 8em;"> &#160;
+</th>
+<th> <div class="t-vertical"><div><span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">float</span></span></span></div></div>
+</th>
+<th> <div class="t-vertical"><div><span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">double</span></span></span></div></div>
+</th>
+<th> <div class="t-vertical"><div><span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">long</span> <span class="kw4">double</span></span></span></div></div>
+</th></tr>
+<tr>
+<th> atan2
+</th>
+<td> <a href="math/atan2.html" title="c/numeric/math/atan2"><tt>atan2f</tt></a>
+</td>
+<td> <a href="math/atan2.html" title="c/numeric/math/atan2"><tt>atan2</tt></a>
+</td>
+<td> <a href="math/atan2.html" title="c/numeric/math/atan2"><tt>atan2l</tt></a>
+</td></tr>
+<tr>
+<th> cbrt
+</th>
+<td> <a href="math/cbrt.html" title="c/numeric/math/cbrt"><tt>cbrtf</tt></a>
+</td>
+<td> <a href="math/cbrt.html" title="c/numeric/math/cbrt"><tt>cbrt</tt></a>
+</td>
+<td> <a href="math/cbrt.html" title="c/numeric/math/cbrt"><tt>cbrtl</tt></a>
+</td></tr>
+<tr>
+<th> ceil
+</th>
+<td> <a href="math/ceil.html" title="c/numeric/math/ceil"><tt>ceilf</tt></a>
+</td>
+<td> <a href="math/ceil.html" title="c/numeric/math/ceil"><tt>ceil</tt></a>
+</td>
+<td> <a href="math/ceil.html" title="c/numeric/math/ceil"><tt>ceill</tt></a>
+</td></tr>
+<tr>
+<th> copysign
+</th>
+<td> <a href="math/copysign.html" title="c/numeric/math/copysign"><tt>copysignf</tt></a>
+</td>
+<td> <a href="math/copysign.html" title="c/numeric/math/copysign"><tt>copysign</tt></a>
+</td>
+<td> <a href="math/copysign.html" title="c/numeric/math/copysign"><tt>copysignl</tt></a>
+</td></tr>
+<tr>
+<th> erf
+</th>
+<td> <a href="math/erf.html" title="c/numeric/math/erf"><tt>erff</tt></a>
+</td>
+<td> <a href="math/erf.html" title="c/numeric/math/erf"><tt>erf</tt></a>
+</td>
+<td> <a href="math/erf.html" title="c/numeric/math/erf"><tt>erfl</tt></a>
+</td></tr>
+<tr>
+<th> erfc
+</th>
+<td> <a href="math/erfc.html" title="c/numeric/math/erfc"><tt>erfcf</tt></a>
+</td>
+<td> <a href="math/erfc.html" title="c/numeric/math/erfc"><tt>erfc</tt></a>
+</td>
+<td> <a href="math/erfc.html" title="c/numeric/math/erfc"><tt>erfcl</tt></a>
+</td></tr>
+<tr>
+<th> exp2
+</th>
+<td> <a href="math/exp2.html" title="c/numeric/math/exp2"><tt>exp2f</tt></a>
+</td>
+<td> <a href="math/exp2.html" title="c/numeric/math/exp2"><tt>exp2</tt></a>
+</td>
+<td> <a href="math/exp2.html" title="c/numeric/math/exp2"><tt>exp2l</tt></a>
+</td></tr>
+<tr>
+<th> expm1
+</th>
+<td> <a href="math/expm1.html" title="c/numeric/math/expm1"><tt>expm1f</tt></a>
+</td>
+<td> <a href="math/expm1.html" title="c/numeric/math/expm1"><tt>expm1</tt></a>
+</td>
+<td> <a href="math/expm1.html" title="c/numeric/math/expm1"><tt>expm1l</tt></a>
+</td></tr>
+<tr>
+<th> fdim
+</th>
+<td> <a href="math/fdim.html" title="c/numeric/math/fdim"><tt>fdimf</tt></a>
+</td>
+<td> <a href="math/fdim.html" title="c/numeric/math/fdim"><tt>fdim</tt></a>
+</td>
+<td> <a href="math/fdim.html" title="c/numeric/math/fdim"><tt>fdiml</tt></a>
+</td></tr>
+<tr>
+<th> floor
+</th>
+<td> <a href="math/floor.html" title="c/numeric/math/floor"><tt>floorf</tt></a>
+</td>
+<td> <a href="math/floor.html" title="c/numeric/math/floor"><tt>floor</tt></a>
+</td>
+<td> <a href="math/floor.html" title="c/numeric/math/floor"><tt>floorl</tt></a>
+</td></tr>
+<tr>
+<th> fma
+</th>
+<td> <a href="math/fma.html" title="c/numeric/math/fma"><tt>fmaf</tt></a>
+</td>
+<td> <a href="math/fma.html" title="c/numeric/math/fma"><tt>fma</tt></a>
+</td>
+<td> <a href="math/fma.html" title="c/numeric/math/fma"><tt>fmal</tt></a>
+</td></tr>
+<tr>
+<th> fmax
+</th>
+<td> <a href="math/fmax.html" title="c/numeric/math/fmax"><tt>fmaxf</tt></a>
+</td>
+<td> <a href="math/fmax.html" title="c/numeric/math/fmax"><tt>fmax</tt></a>
+</td>
+<td> <a href="math/fmax.html" title="c/numeric/math/fmax"><tt>fmaxl</tt></a>
+</td></tr>
+<tr>
+<th> fmin
+</th>
+<td> <a href="math/fmin.html" title="c/numeric/math/fmin"><tt>fminf</tt></a>
+</td>
+<td> <a href="math/fmin.html" title="c/numeric/math/fmin"><tt>fmin</tt></a>
+</td>
+<td> <a href="math/fmin.html" title="c/numeric/math/fmin"><tt>fminl</tt></a>
+</td></tr>
+<tr>
+<th> fmod
+</th>
+<td> <a href="math/fmod.html" title="c/numeric/math/fmod"><tt>fmodf</tt></a>
+</td>
+<td> <a href="math/fmod.html" title="c/numeric/math/fmod"><tt>fmod</tt></a>
+</td>
+<td> <a href="math/fmod.html" title="c/numeric/math/fmod"><tt>fmodl</tt></a>
+</td></tr>
+<tr>
+<th> frexp
+</th>
+<td> <a href="math/frexp.html" title="c/numeric/math/frexp"><tt>frexpf</tt></a>
+</td>
+<td> <a href="math/frexp.html" title="c/numeric/math/frexp"><tt>frexp</tt></a>
+</td>
+<td> <a href="math/frexp.html" title="c/numeric/math/frexp"><tt>frexpl</tt></a>
+</td></tr>
+<tr>
+<th> hypot
+</th>
+<td> <a href="math/hypot.html" title="c/numeric/math/hypot"><tt>hypotf</tt></a>
+</td>
+<td> <a href="math/hypot.html" title="c/numeric/math/hypot"><tt>hypot</tt></a>
+</td>
+<td> <a href="math/hypot.html" title="c/numeric/math/hypot"><tt>hypotl</tt></a>
+</td></tr>
+<tr>
+<th> ilogb
+</th>
+<td> <a href="math/ilogb.html" title="c/numeric/math/ilogb"><tt>ilogbf</tt></a>
+</td>
+<td> <a href="math/ilogb.html" title="c/numeric/math/ilogb"><tt>ilogb</tt></a>
+</td>
+<td> <a href="math/ilogb.html" title="c/numeric/math/ilogb"><tt>ilogbl</tt></a>
+</td></tr>
+<tr>
+<th> ldexp
+</th>
+<td> <a href="math/ldexp.html" title="c/numeric/math/ldexp"><tt>ldexpf</tt></a>
+</td>
+<td> <a href="math/ldexp.html" title="c/numeric/math/ldexp"><tt>ldexp</tt></a>
+</td>
+<td> <a href="math/ldexp.html" title="c/numeric/math/ldexp"><tt>ldexpl</tt></a>
+</td></tr>
+<tr>
+<th> lgamma
+</th>
+<td> <a href="math/lgamma.html" title="c/numeric/math/lgamma"><tt>lgammaf</tt></a>
+</td>
+<td> <a href="math/lgamma.html" title="c/numeric/math/lgamma"><tt>lgamma</tt></a>
+</td>
+<td> <a href="math/lgamma.html" title="c/numeric/math/lgamma"><tt>lgammal</tt></a>
+</td></tr>
+<tr>
+<th> llrint
+</th>
+<td> <a href="math/llrint.html" title="c/numeric/math/llrint" class="mw-redirect"><tt>llrintf</tt></a>
+</td>
+<td> <a href="math/llrint.html" title="c/numeric/math/llrint" class="mw-redirect"><tt>llrint</tt></a>
+</td>
+<td> <a href="math/llrint.html" title="c/numeric/math/llrint" class="mw-redirect"><tt>llrintl</tt></a>
+</td></tr>
+<tr>
+<th> llround
+</th>
+<td> <a href="math/llround.html" title="c/numeric/math/llround" class="mw-redirect"><tt>llroundf</tt></a>
+</td>
+<td> <a href="math/llround.html" title="c/numeric/math/llround" class="mw-redirect"><tt>llround</tt></a>
+</td>
+<td> <a href="math/llround.html" title="c/numeric/math/llround" class="mw-redirect"><tt>llroundl</tt></a>
+</td></tr>
+<tr>
+<th> log10
+</th>
+<td> <a href="math/log10.html" title="c/numeric/math/log10"><tt>log10f</tt></a>
+</td>
+<td> <a href="math/log10.html" title="c/numeric/math/log10"><tt>log10</tt></a>
+</td>
+<td> <a href="math/log10.html" title="c/numeric/math/log10"><tt>log10l</tt></a>
+</td></tr>
+<tr>
+<th> log1p
+</th>
+<td> <a href="math/log1p.html" title="c/numeric/math/log1p"><tt>log1pf</tt></a>
+</td>
+<td> <a href="math/log1p.html" title="c/numeric/math/log1p"><tt>log1p</tt></a>
+</td>
+<td> <a href="math/log1p.html" title="c/numeric/math/log1p"><tt>log1pl</tt></a>
+</td></tr>
+<tr>
+<th> log2
+</th>
+<td> <a href="math/log2.html" title="c/numeric/math/log2"><tt>log2f</tt></a>
+</td>
+<td> <a href="math/log2.html" title="c/numeric/math/log2"><tt>log2</tt></a>
+</td>
+<td> <a href="math/log2.html" title="c/numeric/math/log2"><tt>log2l</tt></a>
+</td></tr>
+<tr>
+<th> logb
+</th>
+<td> <a href="math/logb.html" title="c/numeric/math/logb"><tt>logbf</tt></a>
+</td>
+<td> <a href="math/logb.html" title="c/numeric/math/logb"><tt>logb</tt></a>
+</td>
+<td> <a href="math/logb.html" title="c/numeric/math/logb"><tt>logbl</tt></a>
+</td></tr>
+<tr>
+<th> lrint
+</th>
+<td> <a href="math/lrint.html" title="c/numeric/math/lrint" class="mw-redirect"><tt>lrintf</tt></a>
+</td>
+<td> <a href="math/lrint.html" title="c/numeric/math/lrint" class="mw-redirect"><tt>lrint</tt></a>
+</td>
+<td> <a href="math/lrint.html" title="c/numeric/math/lrint" class="mw-redirect"><tt>lrintl</tt></a>
+</td></tr>
+<tr>
+<th> lround
+</th>
+<td> <a href="math/lround.html" title="c/numeric/math/lround" class="mw-redirect"><tt>lroundf</tt></a>
+</td>
+<td> <a href="math/lround.html" title="c/numeric/math/lround" class="mw-redirect"><tt>lround</tt></a>
+</td>
+<td> <a href="math/lround.html" title="c/numeric/math/lround" class="mw-redirect"><tt>lroundl</tt></a>
+</td></tr>
+<tr>
+<th> nearbyint
+</th>
+<td> <a href="math/nearbyint.html" title="c/numeric/math/nearbyint"><tt>nearbyintf</tt></a>
+</td>
+<td> <a href="math/nearbyint.html" title="c/numeric/math/nearbyint"><tt>nearbyint</tt></a>
+</td>
+<td> <a href="math/nearbyint.html" title="c/numeric/math/nearbyint"><tt>nearbyintl</tt></a>
+</td></tr>
+<tr>
+<th> nextafter
+</th>
+<td> <a href="math/nexttoward.html" title="c/numeric/math/nextafter"><tt>nextafterf</tt></a>
+</td>
+<td> <a href="math/nexttoward.html" title="c/numeric/math/nextafter"><tt>nextafter</tt></a>
+</td>
+<td> <a href="math/nexttoward.html" title="c/numeric/math/nextafter"><tt>nextafterl</tt></a>
+</td></tr>
+<tr>
+<th> nexttoward
+</th>
+<td> <a href="math/nexttoward.html" title="c/numeric/math/nexttoward" class="mw-redirect"><tt>nexttowardf</tt></a>
+</td>
+<td> <a href="math/nexttoward.html" title="c/numeric/math/nexttoward" class="mw-redirect"><tt>nexttoward</tt></a>
+</td>
+<td> <a href="math/nexttoward.html" title="c/numeric/math/nexttoward" class="mw-redirect"><tt>nexttowardl</tt></a>
+</td></tr>
+<tr>
+<th> remainder
+</th>
+<td> <a href="math/remainder.html" title="c/numeric/math/remainder"><tt>remainderf</tt></a>
+</td>
+<td> <a href="math/remainder.html" title="c/numeric/math/remainder"><tt>remainder</tt></a>
+</td>
+<td> <a href="math/remainder.html" title="c/numeric/math/remainder"><tt>remainderl</tt></a>
+</td></tr>
+<tr>
+<th> remquo
+</th>
+<td> <a href="math/remquo.html" title="c/numeric/math/remquo"><tt>remquof</tt></a>
+</td>
+<td> <a href="math/remquo.html" title="c/numeric/math/remquo"><tt>remquo</tt></a>
+</td>
+<td> <a href="math/remquo.html" title="c/numeric/math/remquo"><tt>remquol</tt></a>
+</td></tr>
+<tr>
+<th> rint
+</th>
+<td> <a href="math/lrint.html" title="c/numeric/math/rint"><tt>rintf</tt></a>
+</td>
+<td> <a href="math/lrint.html" title="c/numeric/math/rint"><tt>rint</tt></a>
+</td>
+<td> <a href="math/lrint.html" title="c/numeric/math/rint"><tt>rintl</tt></a>
+</td></tr>
+<tr>
+<th> round
+</th>
+<td> <a href="math/lround.html" title="c/numeric/math/round"><tt>roundf</tt></a>
+</td>
+<td> <a href="math/lround.html" title="c/numeric/math/round"><tt>round</tt></a>
+</td>
+<td> <a href="math/lround.html" title="c/numeric/math/round"><tt>roundl</tt></a>
+</td></tr>
+<tr>
+<th> scalbln
+</th>
+<td> <a href="math/scalbln.html" title="c/numeric/math/scalbln" class="mw-redirect"><tt>scalblnf</tt></a>
+</td>
+<td> <a href="math/scalbln.html" title="c/numeric/math/scalbln" class="mw-redirect"><tt>scalbln</tt></a>
+</td>
+<td> <a href="math/scalbln.html" title="c/numeric/math/scalbln" class="mw-redirect"><tt>scalblnl</tt></a>
+</td></tr>
+<tr>
+<th> scalbn
+</th>
+<td> <a href="math/scalbln.html" title="c/numeric/math/scalbn"><tt>scalbnf</tt></a>
+</td>
+<td> <a href="math/scalbln.html" title="c/numeric/math/scalbn"><tt>scalbn</tt></a>
+</td>
+<td> <a href="math/scalbln.html" title="c/numeric/math/scalbn"><tt>scalbnl</tt></a>
+</td></tr>
+<tr>
+<th> tgamma
+</th>
+<td> <a href="math/tgamma.html" title="c/numeric/math/tgamma"><tt>tgammaf</tt></a>
+</td>
+<td> <a href="math/tgamma.html" title="c/numeric/math/tgamma"><tt>tgamma</tt></a>
+</td>
+<td> <a href="math/tgamma.html" title="c/numeric/math/tgamma"><tt>tgammal</tt></a>
+</td></tr>
+<tr>
+<th> trunc
+</th>
+<td> <a href="math/trunc.html" title="c/numeric/math/trunc"><tt>truncf</tt></a>
+</td>
+<td> <a href="math/trunc.html" title="c/numeric/math/trunc"><tt>trunc</tt></a>
+</td>
+<td> <a href="math/trunc.html" title="c/numeric/math/trunc"><tt>truncl</tt></a>
+</td></tr></table>
+<h3><span class="editsection">[<a href="http://zh.cppreference.com/mwiki/index.php?title=c/numeric/tgmath&amp;action=edit&amp;section=3" title="编辑章节：示例">编辑</a>]</span> <span class="mw-headline" id=".E7.A4.BA.E4.BE.8B">示例</span></h3>
+<div class="t-example"><div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="c source-c"><pre class="de1"><span class="kw4">int</span> i<span class="sy4">;</span>
+<span class="kw4">float</span> f<span class="sy4">;</span>
+<span class="kw4">double</span> d<span class="sy4">;</span>
+<span class="kw4">long</span> <span class="kw4">double</span> ld<span class="sy4">;</span>
+<span class="kw4">float</span> <a href="complex/complex.html"><span class="kw743">complex</span></a> fc<span class="sy4">;</span>
+<span class="kw4">double</span> <a href="complex/complex.html"><span class="kw743">complex</span></a> dc<span class="sy4">;</span>
+<span class="kw4">long</span> <span class="kw4">double</span> <a href="complex/complex.html"><span class="kw743">complex</span></a> ldc<span class="sy4">;</span>
+&#160;
+<span class="co1">// macro -&gt; function call</span>
+<a href="math/cos.html"><span class="kw670">cos</span></a><span class="br0">&#40;</span>i<span class="br0">&#41;</span><span class="sy4">;</span>   <span class="co1">// -&gt; cos(i)</span>
+<a href="math/sin.html"><span class="kw669">sin</span></a><span class="br0">&#40;</span>f<span class="br0">&#41;</span><span class="sy4">;</span>   <span class="co1">// -&gt; sinf(f)</span>
+<a href="math/acos.html"><span class="kw673">acos</span></a><span class="br0">&#40;</span>d<span class="br0">&#41;</span><span class="sy4">;</span>  <span class="co1">// -&gt; acos(d)</span>
+<a href="math/sqrt.html"><span class="kw665">sqrt</span></a><span class="br0">&#40;</span>dc<span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// -&gt; csqrt(dc);</span></pre></div></div>
+<p><br /> 
+</p>
+</div>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 8069/1000000
+Preprocessor generated node count: 14110/1000000
+Post‐expand include size: 73745/2097152 bytes
+Template argument size: 28063/2097152 bytes
+Highest expansion depth: 18/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_zh_:pcache:idhash:1219-0!*!0!!*!2!zh!* and timestamp 20141027003052 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    来自“<a href="http://zh.cppreference.com/mwiki/index.php?title=c/numeric/tgmath&amp;oldid=37747">http://zh.cppreference.com/mwiki/index.php?title=c/numeric/tgmath&amp;oldid=37747</a>”                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://zh.cppreference.com/w/Special:%E9%A1%B5%E9%9D%A2%E5%88%86%E7%B1%BB" title="Special:页面分类">1个分类</a>：<ul><li><a href="http://zh.cppreference.com/mwiki/index.php?title=Category:Todo_with_reason&amp;action=edit&amp;redlink=1" class="new" title="Category:Todo with reason（页面不存在）">Todo with reason</a></li></ul></div></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer">
+                        <div id="cpp-navigation">
+            <h5>导航</h5>
+            <ul>
+<li id="n-mainpage-description"><a href="../../首页.html" title="访问首页 [z]" accesskey="z">首页</a></li><li id="n-portal"><a href="http://zh.cppreference.com/w/Cppreference:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li><li id="n-currentevents"><a href="http://zh.cppreference.com/w/Cppreference:%E6%96%B0%E9%97%BB%E5%8A%A8%E6%80%81" title="查看当前事件的背景信息">新闻动态</a></li><li id="n-recentchanges"><a href="http://zh.cppreference.com/w/Special:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li><li id="n-randompage"><a href="http://zh.cppreference.com/w/Special:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="载入一个随机页面 [x]" accesskey="x">随机页面</a></li><li id="n-help"><a href="http://zh.cppreference.com/w/Help:%E7%9B%AE%E5%BD%95" title="查找帮助的地方">帮助</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox">
+            <h5><span>工具箱</span><a href="tgmath.html#"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="http://zh.cppreference.com/w/Special:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/c/numeric/tgmath" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li><li id="t-recentchangeslinked"><a href="http://zh.cppreference.com/w/Special:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/c/numeric/tgmath" title="本页链入的页面的最近更改 [k]" accesskey="k">相关更改</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="上传文件 [u]" accesskey="u">上传文件</a></li><li id="t-specialpages"><a href="http://zh.cppreference.com/w/Special:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面的列表 [q]" accesskey="q">特殊页面</a></li><li id="t-print"><a href="http://zh.cppreference.com/mwiki/index.php?title=c/numeric/tgmath&amp;printable=yes" rel="alternate" title="本页面的可打印版本 [p]" accesskey="p">打印版本</a></li><li id="t-permalink"><a href="http://zh.cppreference.com/mwiki/index.php?title=c/numeric/tgmath&amp;oldid=37747" title="本页面该版本的永久链接">永久链接</a></li><li id="t-info"><a href="http://zh.cppreference.com/mwiki/index.php?title=c/numeric/tgmath&amp;action=info">页面信息</a></li>            </ul>
+        </div>
+                        <div id="cpp-languages">
+            <div><ul><li>其他语言</li></ul></div>
+            <div><ul>
+<li class="interwiki-de"><a href="http://de.cppreference.com/w/c/numeric/tgmath" title="c/numeric/tgmath" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-en"><a href="http://en.cppreference.com/w/c/numeric/tgmath" title="c/numeric/tgmath" lang="en" hreflang="en">English</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/c/numeric/tgmath" title="c/numeric/tgmath" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/c/numeric/tgmath" title="c/numeric/tgmath" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/c/numeric/tgmath" title="c/numeric/tgmath" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/c/numeric/tgmath" title="c/numeric/tgmath" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/c/numeric/tgmath" title="c/numeric/tgmath" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/c/numeric/tgmath" title="c/numeric/tgmath" lang="ru" hreflang="ru">Русский</a></li>            </ul></div>
+        </div>
+            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> 本页面最后修改于2014年10月26日 (星期日) 17:30。</li>
+                                    <li id="footer-info-viewcount">此页面已被浏览过1,077次。</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="http://zh.cppreference.com/w/Cppreference:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="Cppreference:隐私权政策">隐私政策</a></li>
+                                    <li id="footer-places-about"><a href="http://zh.cppreference.com/w/Cppreference:%E5%85%B3%E4%BA%8E" title="Cppreference:关于">关于cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="http://zh.cppreference.com/w/Cppreference:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="Cppreference:免责声明">免责声明</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="http://www.mediawiki.org/"><img src="../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88" /></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88" /></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../mwiki/load.php%3Fdebug=false&amp;lang=zh&amp;modules=skins.cppreference2&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ShowEditLinks"], null, true);
+}</script>
+<script src="../../../mwiki/load.php%3Fdebug=false&amp;lang=zh&amp;modules=site&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 0.188 secs. -->
+	</body>
+<!-- Cached 20141027014511 -->
+</html>

@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr" class="client-nojs">
+<head>
+<title>std::numeric_limits::traps - cppreference.com</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.21.2" />
+<meta name="robots" content="noindex" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="http://zh.cppreference.com/mwiki/index.php?title=cpp/types/numeric_limits/traps&amp;action=edit" />
+<link rel="edit" title="编辑" href="http://zh.cppreference.com/mwiki/index.php?title=cpp/types/numeric_limits/traps&amp;action=edit" />
+<link rel="shortcut icon" href="../../../../favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../mwiki/opensearch_desc.php" title="cppreference.com (zh)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://zh.cppreference.com/mwiki/api.php?action=rsd" />
+<link rel="alternate" hreflang="zh" href="http://zh.cppreference.com/mwiki/index.php?title=cpp/types/numeric_limits/traps&amp;variant=zh" />
+<link rel="alternate" hreflang="zh-hans" href="http://zh.cppreference.com/mwiki/index.php?title=cpp/types/numeric_limits/traps&amp;variant=zh-hans" />
+<link rel="alternate" hreflang="zh-hant" href="http://zh.cppreference.com/mwiki/index.php?title=cpp/types/numeric_limits/traps&amp;variant=zh-hant" />
+<link rel="alternate" hreflang="zh-cn" href="http://zh.cppreference.com/mwiki/index.php?title=cpp/types/numeric_limits/traps&amp;variant=zh-cn" />
+<link rel="alternate" hreflang="zh-hk" href="http://zh.cppreference.com/mwiki/index.php?title=cpp/types/numeric_limits/traps&amp;variant=zh-hk" />
+<link rel="alternate" hreflang="zh-mo" href="http://zh.cppreference.com/mwiki/index.php?title=cpp/types/numeric_limits/traps&amp;variant=zh-mo" />
+<link rel="alternate" hreflang="zh-my" href="http://zh.cppreference.com/mwiki/index.php?title=cpp/types/numeric_limits/traps&amp;variant=zh-my" />
+<link rel="alternate" hreflang="zh-sg" href="http://zh.cppreference.com/mwiki/index.php?title=cpp/types/numeric_limits/traps&amp;variant=zh-sg" />
+<link rel="alternate" hreflang="zh-tw" href="http://zh.cppreference.com/mwiki/index.php?title=cpp/types/numeric_limits/traps&amp;variant=zh-tw" />
+<link rel="alternate" type="application/atom+xml" title="cppreference.com的Atom" href="http://zh.cppreference.com/mwiki/index.php?title=Special:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="../../../../mwiki/load.php%3Fdebug=false&amp;lang=zh&amp;modules=ext.gadget.ShowEditLinks%257Cext.rtlcite%257Cmediawiki.legacy.commonPrint%252Cshared%257Cskins.cppreference2&amp;only=styles&amp;skin=cppreference2&amp;*.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../../../../mwiki/load.php%3Fdebug=false&amp;lang=zh&amp;modules=site&amp;only=styles&amp;skin=cppreference2&amp;*.css" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-css:7:15cea3ec788a65b5187d4018eed543bf */</style>
+
+<script src="../../../../mwiki/load.php%3Fdebug=false&amp;lang=zh&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/types/numeric_limits/traps","wgTitle":"cpp/types/numeric limits/traps","wgCurRevisionId":34017,"wgArticleId":4013,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"zh","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"zh","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgMonthNamesShort":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRelevantPageName":"cpp/types/numeric_limits/traps","wgUserVariant":"zh","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh","language":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ShowEditLinks":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_zh_:resourceloader:filter:minify-js:7:aff3edf20b05a275fc6703031b87b0f7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_types_numeric_limits_traps skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="../../../../index.html">
+                        cppreference.com                        </a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+	<h5><label for="searchInput">搜索</label></h5>
+	<form action="http://zh.cppreference.com/mwiki/index.php" id="searchform">
+		<input type='hidden' name="title" value="Special:搜索"/>
+				<div id="simpleSearch">
+						<input name="search" title="在cppreference.com中搜索 [f]" accesskey="f" id="searchInput" />						<button type="submit" name="button" title="搜索含这些文字的页面" id="searchButton"><img src="../../../../mwiki/skins/cppreference2/images/search-ltr.png%3F303" alt="搜索" /></button>					</div>
+			</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="http://zh.cppreference.com/mwiki/index.php?title=Special:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=cpp%2Ftypes%2Fnumeric+limits%2Ftraps&amp;type=signup">创建账户</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="http://zh.cppreference.com/mwiki/index.php?title=Special:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=cpp%2Ftypes%2Fnumeric+limits%2Ftraps" title="我们鼓励你登录，不过这不是强制的 [o]" accesskey="o">登录</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>名字空间</h5>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="traps.html"  title="查看内容页面 [c]" accesskey="c">页面</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://zh.cppreference.com/mwiki/index.php?title=Talk:cpp/types/numeric_limits/traps&amp;action=edit&amp;redlink=1"  title="有关内容页面的讨论 [t]" accesskey="t">讨论</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu">
+		<h5><span>变换</span><a href="traps.html#"></a></h5>
+	<div class="menu">
+		<ul>
+							<li id="ca-varlang-0" class="selected"><a href="http://zh.cppreference.com/mwiki/index.php?title=cpp/types/numeric_limits/traps&amp;variant=zh" >不转换</a></li>
+							<li id="ca-varlang-1"><a href="http://zh.cppreference.com/mwiki/index.php?title=cpp/types/numeric_limits/traps&amp;variant=zh-hans" >简体</a></li>
+							<li id="ca-varlang-2"><a href="http://zh.cppreference.com/mwiki/index.php?title=cpp/types/numeric_limits/traps&amp;variant=zh-hant" >繁體</a></li>
+							<li id="ca-varlang-3"><a href="http://zh.cppreference.com/mwiki/index.php?title=cpp/types/numeric_limits/traps&amp;variant=zh-cn" >大陆简体</a></li>
+							<li id="ca-varlang-4"><a href="http://zh.cppreference.com/mwiki/index.php?title=cpp/types/numeric_limits/traps&amp;variant=zh-hk" >香港繁體</a></li>
+							<li id="ca-varlang-5"><a href="http://zh.cppreference.com/mwiki/index.php?title=cpp/types/numeric_limits/traps&amp;variant=zh-mo" >澳門繁體</a></li>
+							<li id="ca-varlang-6"><a href="http://zh.cppreference.com/mwiki/index.php?title=cpp/types/numeric_limits/traps&amp;variant=zh-my" >大马简体</a></li>
+							<li id="ca-varlang-7"><a href="http://zh.cppreference.com/mwiki/index.php?title=cpp/types/numeric_limits/traps&amp;variant=zh-sg" >新加坡简体</a></li>
+							<li id="ca-varlang-8"><a href="http://zh.cppreference.com/mwiki/index.php?title=cpp/types/numeric_limits/traps&amp;variant=zh-tw" >台灣正體</a></li>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>查看</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="traps.html" >查看</a></span></li>
+					<li id="ca-edit"><span><a href="http://zh.cppreference.com/mwiki/index.php?title=cpp/types/numeric_limits/traps&amp;action=edit"  title="你可以编辑本页面。请在保存前使用预览按钮。 [e]" accesskey="e">编辑</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://zh.cppreference.com/mwiki/index.php?title=cpp/types/numeric_limits/traps&amp;action=history"  title="本页面过去的版本 [h]" accesskey="h">历史</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>操作</span><a href="traps.html#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading"><span style="font-size:0.7em; line-height:130%">std::numeric_limits::</span>traps</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">来自cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../../cpp.html" title="cpp">cpp</a>&lrm; | <a href="../../types.html" title="cpp/types">types</a>&lrm; | <a href="../numeric_limits.html" title="cpp/types/numeric limits">numeric limits</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="zh" dir="ltr" class="mw-content-ltr"><table class="plainlinks fmbox fmbox-system" style="font-size:0.9em; line-height: 1em">
+<tr>
+<td class="mbox-image">
+  <img alt="" src="../../../../../upload.cppreference.com/mwiki/images/3/31/Imbox_notice.png" width="40" height="40" /></td>
+<td class="mbox-text" style=""> <p>该页由英文版wiki使用<a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a>机器翻译而来。
+</p><p>
+<p>该翻译可能存在错误或用词不当。鼠标停留在文本上可以看到原版本。你可以帮助我们修正错误或改进翻译。参见说明请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>.
+</p>
+</p>
+<p class="t-tr-note-click">
+<a href="http://en.cppreference.com/w/cpp/types/numeric_limits/traps" class="extiw" title="en:cpp/types/numeric limits/traps"> 点击这里参见该页的英文版本</a>
+</p> </td>
+</tr>
+</table>
+<p><!-- META_NOINDEX -->
+</p>
+<div class="t-navbar" style=""><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div>
+<table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+
+<tr>
+<td colspan="5">  <a href="../../language.html" title="cpp/language">语言</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../concept.html" title="cpp/concept">概念</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../utility.html" title="cpp/utility">实用工具库</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../string.html" title="cpp/string">字符串库</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../container.html" title="cpp/container">容器库</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../algorithm.html" title="cpp/algorithm">算法库</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../iterator.html" title="cpp/iterator">迭代器库</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../numeric.html" title="cpp/numeric">Numerics库</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../io.html" title="cpp/io">输入/输出库</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../locale.html" title="cpp/locale">本地化库</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../regex.html" title="cpp/regex">正则表达式库</a> <span class="t-mark">（C++11）</span>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../atomic.html" title="cpp/atomic">原子操作库</a> <span class="t-mark">（C++11）</span>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../thread.html" title="cpp/thread">线程的支持库</a> <span class="t-mark">（C++11）</span>
+</td></tr>
+</table>
+</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://zh.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../utility.html" title="cpp/utility">实用工具库</a><div class="t-navbar-menu"><div><div>
+<table class="t-nv-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5">  <a href="../../types.html" title="cpp/types">类型的支持</a> (basic types, RTTI, type traits)
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../memory.html" title="cpp/memory">动态内存管理</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../error.html" title="cpp/error">错误处理</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../utility/program.html" title="cpp/utility/program">程序实用工具</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../utility/variadic.html" title="cpp/utility/variadic">可变参数函数</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../chrono.html" title="cpp/chrono">日期和时间</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../functional.html" title="cpp/utility/functional">函数对象</a>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../../utility/initializer_list.html" title="cpp/utility/initializer list">initializer_list</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../../utility/bitset.html" title="cpp/utility/bitset">bitset</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../../utility/hash.html" title="cpp/utility/hash">hash</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr class="t-nv-h2">
+<td colspan="5"> <div class="t-tr-text"> 关系运算符<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"> Relational operators</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../../utility/rel_ops/operator_cmp.html" title="cpp/utility/rel ops/operator cmp">rel_ops::operator!=<br />rel_ops::operator&gt;<br />rel_ops::operator&lt;=<br />rel_ops::operator&gt;=</a></td></tr></table>
+</td></tr>
+
+<tr class="t-nv-h2">
+<td colspan="5"> <div class="t-tr-text"> 双和元组<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"> Pairs and tuples</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../../utility/pair.html" title="cpp/utility/pair">pair</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../../utility/tuple.html" title="cpp/utility/tuple">tuple</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../../utility/piecewise_construct_t.html" title="cpp/utility/piecewise construct t">piecewise_construct_t</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../../utility/piecewise_construct.html" title="cpp/utility/piecewise construct">piecewise_construct</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr class="t-nv-h2">
+<td colspan="5"> <div class="t-tr-text"> 掉期，远期和移动<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"> Swap, forward and move</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../../algorithm/swap.html" title="cpp/algorithm/swap">swap</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../../utility/forward.html" title="cpp/utility/forward">forward</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../../utility/move.html" title="cpp/utility/move">move</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../../utility/move_if_noexcept.html" title="cpp/utility/move if noexcept">move_if_noexcept</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../../utility/declval.html" title="cpp/utility/declval">declval</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+</table>
+</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://zh.cppreference.com/mwiki/index.php?title=Template:cpp/utility/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../types.html" title="cpp/types">类型的支持</a><div class="t-navbar-menu"><div><div style="display:inline-block; vertical-align: top;">
+<div>
+<table class="t-nv-begin" cellpadding="0" style="">
+
+
+<tr class="t-nv-h1">
+<td colspan="5"> <div class="t-tr-text"> 基本类型<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"> Basic types</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../language/types.html" title="cpp/language/types">基本类型</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../integer.html" title="cpp/types/integer">固定宽度的整数类型</a> <span class="t-mark">（C++11）</span>
+</td></tr>
+
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-nv-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../ptrdiff_t.html" title="cpp/types/ptrdiff t">ptrdiff_t</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../size_t.html" title="cpp/types/size t">size_t</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../max_align_t.html" title="cpp/types/max align t">max_align_t</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-nv-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../nullptr_t.html" title="cpp/types/nullptr t">nullptr_t</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../offsetof.html" title="cpp/types/offsetof">offsetof</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../NULL.html" title="cpp/types/NULL">NULL</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-nv-h1">
+<td colspan="5"> <div class="t-tr-text"> 数值范围内<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"> Numeric limits</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../numeric_limits.html" title="cpp/types/numeric limits">numeric_limits</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../climits.html" title="cpp/types/climits">C数字限制接口</a>
+</td></tr>
+
+
+<tr class="t-nv-h1">
+<td colspan="5"> <div class="t-tr-text"> 运行时类型信息<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"> Runtime type information</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-nv-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../type_info.html" title="cpp/types/type info">type_info</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../type_index.html" title="cpp/types/type index">type_index</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-nv-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../bad_typeid.html" title="cpp/types/bad typeid">bad_typeid</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../bad_cast.html" title="cpp/types/bad cast">bad_cast</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-nv-h1">
+<td colspan="5"> <div class="t-tr-text"> 类型特征<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"> Type traits</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</td></tr>
+
+<tr class="t-nv-h2">
+<td colspan="5"> <div class="t-tr-text"> 初级型两类<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"> Primary type categories</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-nv-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../is_void.html" title="cpp/types/is void">is_void</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../is_array.html" title="cpp/types/is array">is_array</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../is_pointer.html" title="cpp/types/is pointer">is_pointer</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../is_enum.html" title="cpp/types/is enum">is_enum</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../is_union.html" title="cpp/types/is union">is_union</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../is_class.html" title="cpp/types/is class">is_class</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../is_function.html" title="cpp/types/is function">is_function</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-nv-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../is_object.html" title="cpp/types/is object">is_object</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../is_scalar.html" title="cpp/types/is scalar">is_scalar</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../is_compound.html" title="cpp/types/is compound">is_compound</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../is_integral.html" title="cpp/types/is integral">is_integral</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../is_floating_point.html" title="cpp/types/is floating point">is_floating_point</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../is_fundamental.html" title="cpp/types/is fundamental">is_fundamental</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../is_arithmetic.html" title="cpp/types/is arithmetic">is_arithmetic</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../is_reference.html" title="cpp/types/is reference">is_reference</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../is_lvalue_reference.html" title="cpp/types/is lvalue reference">is_lvalue_reference</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../is_rvalue_reference.html" title="cpp/types/is rvalue reference">is_rvalue_reference</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../is_member_pointer.html" title="cpp/types/is member pointer">is_member_pointer</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../is_member_object_pointer.html" title="cpp/types/is member object pointer">is_member_object_pointer</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../is_member_function_pointer.html" title="cpp/types/is member function pointer">is_member_function_pointer</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+</table>
+</div>
+<div>
+<table class="t-nv-begin" cellpadding="0" style="">
+
+
+<tr class="t-nv-h2">
+<td colspan="5"> <div class="t-tr-text"> 类型属性<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"> Type properties</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-nv-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../is_const.html" title="cpp/types/is const">is_const</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../is_volatile.html" title="cpp/types/is volatile">is_volatile</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../is_pod.html" title="cpp/types/is pod">is_pod</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../is_empty.html" title="cpp/types/is empty">is_empty</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../is_polymorphic.html" title="cpp/types/is polymorphic">is_polymorphic</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../is_abstract.html" title="cpp/types/is abstract">is_abstract</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-nv-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../is_trivial.html" title="cpp/types/is trivial">is_trivial</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../is_trivially_copyable.html" title="cpp/types/is trivially copyable">is_trivially_copyable</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../is_standard_layout.html" title="cpp/types/is standard layout">is_standard_layout</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../is_literal_type.html" title="cpp/types/is literal type">is_literal_type</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../is_signed.html" title="cpp/types/is signed">is_signed</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../is_unsigned.html" title="cpp/types/is unsigned">is_unsigned</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+</table>
+</div>
+</div>
+<div style="display:inline-block; vertical-align: top;">
+<div>
+<table class="t-nv-begin" cellpadding="0" style="">
+
+<tr class="t-nv-h2">
+<td colspan="5"> <div class="t-tr-text"> 支持的操作<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"> Supported operations</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../is_constructible.html" title="cpp/types/is constructible">is_constructible<br />is_trivially_constructible<br />is_nothrow_constructible</a></td><td><span class="t-mark">（C++11）</span><br /><span class="t-mark">（C++11）</span><br /><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../is_default_constructible.html" title="cpp/types/is default constructible">is_default_constructible<br />is_trivially_default_constructible<br />is_nothrow_default_constructible</a></td><td><span class="t-mark">（C++11）</span><br /><span class="t-mark">（C++11）</span><br /><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../is_copy_constructible.html" title="cpp/types/is copy constructible">is_copy_constructible<br />is_trivially_copy_constructible<br />is_nothrow_copy_constructible</a></td><td><span class="t-mark">（C++11）</span><br /><span class="t-mark">（C++11）</span><br /><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../is_move_constructible.html" title="cpp/types/is move constructible">is_move_constructible<br />is_trivially_move_constructible<br />is_nothrow_move_constructible</a></td><td><span class="t-mark">（C++11）</span><br /><span class="t-mark">（C++11）</span><br /><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../is_assignable.html" title="cpp/types/is assignable">is_assignable<br />is_trivially_assignable<br />is_nothrow_assignable</a></td><td><span class="t-mark">（C++11）</span><br /><span class="t-mark">（C++11）</span><br /><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../is_copy_assignable.html" title="cpp/types/is copy assignable">is_copy_assignable<br />is_trivially_copy_assignable<br />is_nothrow_copy_assignable</a></td><td><span class="t-mark">（C++11）</span><br /><span class="t-mark">（C++11）</span><br /><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../is_move_assignable.html" title="cpp/types/is move assignable">is_move_assignable<br />is_trivially_move_assignable<br />is_nothrow_move_assignable</a></td><td><span class="t-mark">（C++11）</span><br /><span class="t-mark">（C++11）</span><br /><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../is_destructible.html" title="cpp/types/is destructible">is_destructible<br />is_trivially_destructible<br />is_nothrow_destructible</a></td><td><span class="t-mark">（C++11）</span><br /><span class="t-mark">（C++11）</span><br /><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../has_virtual_destructor.html" title="cpp/types/has virtual destructor">has_virtual_destructor</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+
+<tr class="t-nv-h2">
+<td colspan="5"> <div class="t-tr-text"> 关系和属性查询<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"> Relationships and property queries</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-nv-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../is_same.html" title="cpp/types/is same">is_same</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../is_base_of.html" title="cpp/types/is base of">is_base_of</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../is_convertible.html" title="cpp/types/is convertible">is_convertible</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-nv-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../alignment_of.html" title="cpp/types/alignment of">alignment_of</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../rank.html" title="cpp/types/rank">rank</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../extent.html" title="cpp/types/extent">extent</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-nv-h2">
+<td colspan="5"> <div class="t-tr-text"> 类型的修改<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"> Type modifications</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-nv-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../remove_cv.html" title="cpp/types/remove cv">remove_cv<br />remove_const<br />remove_volatile</a></td><td><span class="t-mark">（C++11）</span><br /><span class="t-mark">（C++11）</span><br /><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../add_cv.html" title="cpp/types/add cv">add_cv<br />add_const<br />add_volatile</a></td><td><span class="t-mark">（C++11）</span><br /><span class="t-mark">（C++11）</span><br /><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../make_signed.html" title="cpp/types/make signed">make_signed</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../make_unsigned.html" title="cpp/types/make unsigned">make_unsigned</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-nv-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../remove_reference.html" title="cpp/types/remove reference">remove_reference</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../add_reference.html" title="cpp/types/add reference">add_lvalue_reference<br />add_rvalue_reference</a></td><td><span class="t-mark">（C++11）</span><br /><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../remove_pointer.html" title="cpp/types/remove pointer">remove_pointer</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../add_pointer.html" title="cpp/types/add pointer">add_pointer</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../remove_extent.html" title="cpp/types/remove extent">remove_extent</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../remove_all_extents.html" title="cpp/types/remove all extents">remove_all_extents</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-nv-h2">
+<td colspan="5"> <div class="t-tr-text"> 类型转换<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"> Type transformations</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-nv-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../aligned_storage.html" title="cpp/types/aligned storage">aligned_storage</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../aligned_union.html" title="cpp/types/aligned union">aligned_union</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../decay.html" title="cpp/types/decay">decay</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../enable_if.html" title="cpp/types/enable if">enable_if</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-nv-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../conditional.html" title="cpp/types/conditional">conditional</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../common_type.html" title="cpp/types/common type">common_type</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../underlying_type.html" title="cpp/types/underlying type">underlying_type</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../result_of.html" title="cpp/types/result of">result_of</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-nv-h2">
+<td colspan="5"> <div class="t-tr-text"> 键入特征常数<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"> Type trait constants</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="../integral_constant.html" title="cpp/types/integral constant">integral_constant</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://zh.cppreference.com/mwiki/index.php?title=Template:cpp/types/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../numeric_limits.html" title="cpp/types/numeric limits"><tt>std::numeric_limits</tt></a><div class="t-navbar-menu"><div><div>
+<table class="t-nv-begin" cellpadding="0" style="">
+
+<tr class="t-nv-h1">
+<td colspan="5"> <div class="t-tr-text"> 静态常量<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"> Static constants</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="is_specialized.html" title="cpp/types/numeric limits/is specialized">numeric_limits::is_specialized</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="is_signed.html" title="cpp/types/numeric limits/is signed">numeric_limits::is_signed</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="is_integer.html" title="cpp/types/numeric limits/is integer">numeric_limits::is_integer</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="is_exact.html" title="cpp/types/numeric limits/is exact">numeric_limits::is_exact</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="has_infinity.html" title="cpp/types/numeric limits/has infinity">numeric_limits::has_infinity</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="has_quiet_NaN.html" title="cpp/types/numeric limits/has quiet NaN">numeric_limits::has_quiet_NaN</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="has_signaling_NaN.html" title="cpp/types/numeric limits/has signaling NaN">numeric_limits::has_signaling_NaN</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="has_denorm.html" title="cpp/types/numeric limits/has denorm">numeric_limits::has_denorm</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="has_denorm_loss.html" title="cpp/types/numeric limits/has denorm loss">numeric_limits::has_denorm_loss</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="round_style.html" title="cpp/types/numeric limits/round style">numeric_limits::round_style</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="is_iec559.html" title="cpp/types/numeric limits/is iec559">numeric_limits::is_iec559</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="is_bounded.html" title="cpp/types/numeric limits/is bounded">numeric_limits::is_bounded</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="is_modulo.html" title="cpp/types/numeric limits/is modulo">numeric_limits::is_modulo</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="digits.html" title="cpp/types/numeric limits/digits">numeric_limits::digits</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="digits10.html" title="cpp/types/numeric limits/digits10">numeric_limits::digits10</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="max_digits10.html" title="cpp/types/numeric limits/max digits10">numeric_limits::max_digits10</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="radix.html" title="cpp/types/numeric limits/radix">numeric_limits::radix</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="min_exponent.html" title="cpp/types/numeric limits/min exponent">numeric_limits::min_exponent</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="min_exponent10.html" title="cpp/types/numeric limits/min exponent10">numeric_limits::min_exponent10</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="max_exponent.html" title="cpp/types/numeric limits/max exponent">numeric_limits::max_exponent</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="max_exponent10.html" title="cpp/types/numeric limits/max exponent10">numeric_limits::max_exponent10</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><strong class="selflink">numeric_limits::traps</strong></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="tinyness_before.html" title="cpp/types/numeric limits/tinyness before">numeric_limits::tinyness_before</a></td></tr></table>
+</td></tr>
+
+<tr class="t-nv-h1">
+<td colspan="5"> <div class="t-tr-text"> 静态成员函数<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"> Static member functions</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="min.html" title="cpp/types/numeric limits/min">numeric_limits::min</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="lowest.html" title="cpp/types/numeric limits/lowest">numeric_limits::lowest</a></td><td><span class="t-mark">（C++11）</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="max.html" title="cpp/types/numeric limits/max">numeric_limits::max</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="epsilon.html" title="cpp/types/numeric limits/epsilon">numeric_limits::epsilon</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="round_error.html" title="cpp/types/numeric limits/round error">numeric_limits::round_error</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="infinity.html" title="cpp/types/numeric limits/infinity">numeric_limits::infinity</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="quiet_NaN.html" title="cpp/types/numeric limits/quiet NaN">numeric_limits::quiet_NaN</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="signaling_NaN.html" title="cpp/types/numeric limits/signaling NaN">numeric_limits::signaling_NaN</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="denorm_min.html" title="cpp/types/numeric limits/denorm min">numeric_limits::denorm_min</a></td></tr></table>
+</td></tr>
+
+<tr class="t-nv-h1">
+<td colspan="5"> <div class="t-tr-text"> 助手类型<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"> Helper types</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="float_round_style.html" title="cpp/types/numeric limits/float round style">float_round_style</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-nv-ln-table"><tr><td><a href="float_denorm_style.html" title="cpp/types/numeric limits/float denorm style">float_denorm_style</a></td></tr></table>
+</td></tr>
+</table>
+</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://zh.cppreference.com/mwiki/index.php?title=Template:cpp/types/numeric_limits/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div></div>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+<tr class="t-dcl t-dcl-until-cxx11">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">static</span> <span class="kw4">const</span> <span class="kw4">bool</span> traps</span></div></td>
+<td class="t-dcl-nopad">  </td>
+<td> <span class="t-mark">（至 C++11）</span> </td>
+</tr>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+<tr class="t-dcl t-dcl-since-cxx11">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">static</span> <span class="kw4">constexpr</span> <span class="kw4">bool</span> traps</span></div></td>
+<td class="t-dcl-nopad">  </td>
+<td> <span class="t-mark">（C++11 起）</span> </td>
+</tr>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+<div class="t-tr-text"><span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../numeric_limits.html"><span class="kw344">std::<span class="me2">numeric_limits</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">traps</span></span></span><span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span>所有算术类型<code>T</code>至少有一个值，如果使用算术运算作为一个参数，将产生一个<a href="http://en.wikipedia.com/wiki/Trap_(computing)" class="extiw" title="enwiki:Trap (computing)">陷阱</a>. <div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">The value of <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../numeric_limits.html"><span class="kw344">std::<span class="me2">numeric_limits</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">traps</span></span></span> is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> for all arithmetic types <code>T</code> that have at least one value that, if used as an argument to an arithmetic operation, will generate a <a href="http://en.wikipedia.com/wiki/Trap_(computing)" class="extiw" title="enwiki:Trap (computing)">陷阱</a>. </div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+<h3><span class="editsection">[<a href="http://zh.cppreference.com/mwiki/index.php?title=cpp/types/numeric_limits/traps&amp;action=edit&amp;section=1" title="编辑章节：标准的专业">编辑</a>]</span> <span class="mw-headline" id=".E6.A0.87.E5.87.86.E7.9A.84.E4.B8.93.E4.B8.9A">标准的专业</span></h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dsc-hitem">
+<td>  <code>T</code>
+</td>
+<td> <div class="t-tr-text"> 值的<span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../numeric_limits.html"><span class="kw344">std::<span class="me2">numeric_limits</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">traps</span></span></span> <div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"> value of <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../numeric_limits.html"><span class="kw344">std::<span class="me2">numeric_limits</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">traps</span></span></span> </div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</td></tr>
+
+
+<tr class="t-dsc-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dsc">
+<td>  /* non-specialized */
+</td>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span>
+</td></tr>
+
+
+<tr class="t-dsc-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dsc">
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span>
+</td>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span>
+</td></tr>
+
+
+<tr class="t-dsc-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dsc">
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">char</span></span></span>
+</td>
+<td> <div class="t-tr-text"> 通常<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> <div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"> usually <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> </div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</td></tr>
+
+
+<tr class="t-dsc-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dsc">
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">signed</span> <span class="kw4">char</span></span></span>
+</td>
+<td> <div class="t-tr-text"> 通常<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> <div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"> usually <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> </div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</td></tr>
+
+
+<tr class="t-dsc-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dsc">
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">char</span></span></span>
+</td>
+<td> <div class="t-tr-text"> 通常<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> <div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"> usually <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> </div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</td></tr>
+
+
+<tr class="t-dsc-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dsc">
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">wchar_t</span></span></span>
+</td>
+<td> <div class="t-tr-text"> 通常<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> <div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"> usually <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> </div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</td></tr>
+
+
+<tr class="t-dsc-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dsc">
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">char16_t</span></span></span>
+</td>
+<td> <div class="t-tr-text"> 通常<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> <div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"> usually <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> </div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</td></tr>
+
+
+<tr class="t-dsc-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dsc">
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">char32_t</span></span></span>
+</td>
+<td> <div class="t-tr-text"> 通常<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> <div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"> usually <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> </div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</td></tr>
+
+
+<tr class="t-dsc-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dsc">
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">short</span></span></span>
+</td>
+<td> <div class="t-tr-text"> 通常<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> <div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"> usually <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> </div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</td></tr>
+
+
+<tr class="t-dsc-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dsc">
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">short</span></span></span>
+</td>
+<td> <div class="t-tr-text"> 通常<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> <div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"> usually <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> </div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</td></tr>
+
+
+<tr class="t-dsc-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dsc">
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span></span></span>
+</td>
+<td> <div class="t-tr-text"> 通常<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> <div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"> usually <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> </div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</td></tr>
+
+
+<tr class="t-dsc-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dsc">
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">int</span></span></span>
+</td>
+<td> <div class="t-tr-text"> 通常<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> <div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"> usually <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> </div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</td></tr>
+
+
+<tr class="t-dsc-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dsc">
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span></span></span>
+</td>
+<td> <div class="t-tr-text"> 通常<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> <div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"> usually <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> </div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</td></tr>
+
+
+<tr class="t-dsc-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dsc">
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">long</span></span></span>
+</td>
+<td> <div class="t-tr-text"> 通常<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> <div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"> usually <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> </div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</td></tr>
+
+
+<tr class="t-dsc-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dsc">
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span> <span class="kw4">long</span></span></span>
+</td>
+<td> <div class="t-tr-text"> 通常<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> <div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"> usually <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> </div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</td></tr>
+
+
+<tr class="t-dsc-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dsc">
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">long</span> <span class="kw4">long</span></span></span>
+</td>
+<td> <div class="t-tr-text"> 通常<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> <div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"> usually <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> </div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</td></tr>
+
+
+<tr class="t-dsc-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dsc">
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">float</span></span></span>
+</td>
+<td> <div class="t-tr-text"> 通常<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span> <div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"> usually <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span> </div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</td></tr>
+
+
+<tr class="t-dsc-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dsc">
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">double</span></span></span>
+</td>
+<td> <div class="t-tr-text"> 通常<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span> <div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"> usually <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span> </div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</td></tr>
+
+
+<tr class="t-dsc-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dsc">
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span> <span class="kw4">double</span></span></span>
+</td>
+<td> <div class="t-tr-text"> 通常<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span> <div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"> usually <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span> </div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+</td></tr>
+
+</table>
+<h3><span class="editsection">[<a href="http://zh.cppreference.com/mwiki/index.php?title=cpp/types/numeric_limits/traps&amp;action=edit&amp;section=2" title="编辑章节：注释">编辑</a>]</span> <span class="mw-headline" id=".E6.B3.A8.E9.87.8A">注释</span></h3>
+<div class="t-tr-text">在大多数平台上整数除以零总是陷阱，<span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../numeric_limits.html"><span class="kw344">std::<span class="me2">numeric_limits</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">traps</span></span></span><span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span>为所有支持的值为0的整数类型。唯一的例外是类型<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span>：尽管师由于积分的推广从<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span><span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span><span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span></span></span>陷阱，是零值<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span></span></span>陷阱，。零不是值类型<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span><div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">On most platforms integer division by zero always traps, and <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../numeric_limits.html"><span class="kw344">std::<span class="me2">numeric_limits</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">traps</span></span></span> is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> for all integer types that support the value 0. The exception is the type <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span>: even though division by <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span> traps due to integral promotion from <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span> to <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span></span></span>, it is the zero-valued <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span></span></span> that traps. Zero is not a value of type <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span>.</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+<div class="t-tr-text">在大多数平台上，浮点异常可以打开和关闭在运行时（例如<span class="t-c"><span class="mw-geshi cpp source-cpp">feenableexcept<span class="br0">&#40;</span><span class="br0">&#41;</span></span></span>在Windows上的Linux或<span class="t-c"><span class="mw-geshi cpp source-cpp">_controlfp</span></span>），在这种情况下，<span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../numeric_limits.html"><span class="kw344">std::<span class="me2">numeric_limits</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">traps</span></span></span>的浮点类型的价值体现了国家的浮点捕获功能的时候，程序的启动，这是<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span>上最先进的系统。一个例外情况是在DEC Alpha的程序，它是<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span>如果编译时没有<code>-ieee</code>.<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig">On most platforms, floating-point exceptions may be turned on and off at run time (e.g. <span class="t-c"><span class="mw-geshi cpp source-cpp">feenableexcept<span class="br0">&#40;</span><span class="br0">&#41;</span></span></span> on Linux or <span class="t-c"><span class="mw-geshi cpp source-cpp">_controlfp</span></span> on Windows), in which case the value of <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../numeric_limits.html"><span class="kw344">std::<span class="me2">numeric_limits</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">traps</span></span></span> for floating-point types reflects the state of floating-point trapping facility at the time of program startup, which is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span> on most modern systems. An exception would be a DEC Alpha program, where it is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> if compiled without <code>-ieee</code>.</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div>
+<p><br />
+</p>
+<h3><span class="editsection">[<a href="http://zh.cppreference.com/mwiki/index.php?title=cpp/types/numeric_limits/traps&amp;action=edit&amp;section=3" title="编辑章节：另请参阅">编辑</a>]</span> <span class="mw-headline" id=".E5.8F.A6.E8.AF.B7.E5.8F.82.E9.98.85">另请参阅</span></h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dsc">
+<td colspan="2">  <a href="../../numeric/fenv.html" title="cpp/numeric/fenv">浮点环境</a>
+</td></tr>
+
+
+<tr class="t-dsc-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="tinyness_before.html" title="cpp/types/numeric limits/tinyness before"> tinyness_before</a></div><div><span class="t-cmark"> [静态的]&lt;/div&gt;&lt;/div&gt;
+</td>
+<td>  <div class="t-tr-text"> 识别检测tinyness四舍五入前的浮点类型<div class="t-tr-dropdown"><div><div><div class="t-tr-dropdown-arrow-border"></div><div class="t-tr-dropdown-arrow"></div><div class="t-tr-dropdown-h">原文：</div><div class="t-tr-dropdown-orig"> identifies floating-point types that detect tinyness before rounding</div><div class="t-tr-dropdown-notes">这段文字是通过 <a rel="nofollow" class="external text" href="http://translate.google.com">Google Translate</a> 自动翻译生成的。<br />您可以帮助我们检查、纠正翻译中的错误。详情请点击<a rel="nofollow" class="external text" href="http://en.cppreference.com/w/Cppreference:MachineTranslations">这里</a>。</div></div></div></div></div> <br /> <span class="t-mark">（公共静态成员常量）</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://zh.cppreference.com/mwiki/index.php?title=Template:cpp/types/numeric_limits/dsc_tinyness_before&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="has_denorm_loss.html" title="cpp/types/numeric limits/has denorm loss"> has_denorm_loss</a></div><div><span class="t-cmark"> [静态的]&lt;/div&gt;&lt;/div&gt;
+</td>
+<td>   identifies the floating-point types that detect loss of precision as denormalization loss rather than inexact result  <br /> <span class="t-mark">（公共静态成员常量）</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://zh.cppreference.com/mwiki/index.php?title=Template:cpp/types/numeric_limits/dsc_has_denorm_loss&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+</table></span>
+</div>
+</div>
+<p></span>
+</p>
+</div>
+</div>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 11068/1000000
+Preprocessor generated node count: 13045/1000000
+Post‐expand include size: 336785/2097152 bytes
+Template argument size: 91179/2097152 bytes
+Highest expansion depth: 17/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_zh_:pcache:idhash:4013-0!*!0!!*!2!zh!* and timestamp 20150223222017 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    来自“<a href="http://zh.cppreference.com/mwiki/index.php?title=cpp/types/numeric_limits/traps&amp;oldid=34017">http://zh.cppreference.com/mwiki/index.php?title=cpp/types/numeric_limits/traps&amp;oldid=34017</a>”                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id='catlinks' class='catlinks catlinks-allhidden'></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer">
+                        <div id="cpp-navigation">
+            <h5>导航</h5>
+            <ul>
+<li id="n-mainpage-description"><a href="../../../首页.html" title="访问首页 [z]" accesskey="z">首页</a></li><li id="n-portal"><a href="http://zh.cppreference.com/w/Cppreference:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li><li id="n-currentevents"><a href="http://zh.cppreference.com/w/Cppreference:%E6%96%B0%E9%97%BB%E5%8A%A8%E6%80%81" title="查看当前事件的背景信息">新闻动态</a></li><li id="n-recentchanges"><a href="http://zh.cppreference.com/w/Special:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li><li id="n-randompage"><a href="http://zh.cppreference.com/w/Special:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="载入一个随机页面 [x]" accesskey="x">随机页面</a></li><li id="n-help"><a href="http://zh.cppreference.com/w/Help:%E7%9B%AE%E5%BD%95" title="查找帮助的地方">帮助</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox">
+            <h5><span>工具箱</span><a href="traps.html#"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="http://zh.cppreference.com/w/Special:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/cpp/types/numeric_limits/traps" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li><li id="t-recentchangeslinked"><a href="http://zh.cppreference.com/w/Special:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/cpp/types/numeric_limits/traps" title="本页链入的页面的最近更改 [k]" accesskey="k">相关更改</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="上传文件 [u]" accesskey="u">上传文件</a></li><li id="t-specialpages"><a href="http://zh.cppreference.com/w/Special:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面的列表 [q]" accesskey="q">特殊页面</a></li><li id="t-print"><a href="http://zh.cppreference.com/mwiki/index.php?title=cpp/types/numeric_limits/traps&amp;printable=yes" rel="alternate" title="本页面的可打印版本 [p]" accesskey="p">打印版本</a></li><li id="t-permalink"><a href="http://zh.cppreference.com/mwiki/index.php?title=cpp/types/numeric_limits/traps&amp;oldid=34017" title="本页面该版本的永久链接">永久链接</a></li><li id="t-info"><a href="http://zh.cppreference.com/mwiki/index.php?title=cpp/types/numeric_limits/traps&amp;action=info">页面信息</a></li>            </ul>
+        </div>
+                        <div id="cpp-languages">
+            <div><ul><li>其他语言</li></ul></div>
+            <div><ul>
+<li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/types/numeric_limits/traps" title="cpp/types/numeric limits/traps" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-en"><a href="http://en.cppreference.com/w/cpp/types/numeric_limits/traps" title="cpp/types/numeric limits/traps" lang="en" hreflang="en">English</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/types/numeric_limits/traps" title="cpp/types/numeric limits/traps" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/types/numeric_limits/traps" title="cpp/types/numeric limits/traps" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/types/numeric_limits/traps" title="cpp/types/numeric limits/traps" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/types/numeric_limits/traps" title="cpp/types/numeric limits/traps" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/types/numeric_limits/traps" title="cpp/types/numeric limits/traps" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/types/numeric_limits/traps" title="cpp/types/numeric limits/traps" lang="ru" hreflang="ru">Русский</a></li>            </ul></div>
+        </div>
+            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> 本页面最后修改于2013年7月2日 (星期二) 11:54。</li>
+                                    <li id="footer-info-viewcount">此页面已被浏览过411次。</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="http://zh.cppreference.com/w/Cppreference:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="Cppreference:隐私权政策">隐私政策</a></li>
+                                    <li id="footer-places-about"><a href="http://zh.cppreference.com/w/Cppreference:%E5%85%B3%E4%BA%8E" title="Cppreference:关于">关于cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="http://zh.cppreference.com/w/Cppreference:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="Cppreference:免责声明">免责声明</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="http://www.mediawiki.org/"><img src="../../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88" /></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88" /></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../../mwiki/load.php%3Fdebug=false&amp;lang=zh&amp;modules=skins.cppreference2&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ShowEditLinks"], null, true);
+}</script>
+<script src="../../../../mwiki/load.php%3Fdebug=false&amp;lang=zh&amp;modules=site&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 9.371 secs. -->
+	</body>
+<!-- Cached 20150223222017 -->
+</html>
